@@ -1,0 +1,290 @@
+[
+ {
+   "dish": "Fries and Ketchup",
+   "description": "Triple-fried, hand-cut Rosamunda potato chips with smoked tomato ketchup",
+   "priceEuro": "6",
+   "category_area": "North America",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Nachos and Dips",
+   "description": "Corn nachos with black bean dip, habanero salsa and guacamole",
+   "priceEuro": "7",
+   "category_area": "Mexican",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "1"
+ },
+ {
+   "dish": "Black Bean Tacos",
+   "description": "Corn tortilla with black bean mash, white cabbage, avocado and habanero salsa",
+   "priceEuro": "8",
+   "category_area": "Mexican",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "1"
+ },
+ {
+   "dish": "Jalopenos",
+   "description": "Deep-fried jalopenos filled with bean mash, salsa roja",
+   "priceEuro": "6",
+   "category_area": "Mexican",
+   "category_glutenFree": "yes",
+   "category_fodmap": "no",
+   "category_chiliStrength": "1"
+ },
+ {
+   "dish": "Chips and Dips",
+   "description": "Our own Rosamunda potato chips, with a light cider vinegar and chive flavour, with one dip of your choice",
+   "priceEuro": "5",
+   "category_area": "North America",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Peanuts",
+   "description": "Roasted and salted smoked peanuts with a Cajun flavour",
+   "priceEuro": "4",
+   "category_area": "North America",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Pizza Marinara",
+   "description": "Roman-style pizza Marinara: tomato and garlic",
+   "priceEuro": "6",
+   "category_area": "Mediterranean",
+   "category_glutenFree": "no",
+   "category_fodmap": "no",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Pizza Pomodoro",
+   "description": "Roman-style pizza with tomato sauce, fresh cherry tomatoes and fresh herbs",
+   "priceEuro": "6",
+   "category_area": "Mediterranean",
+   "category_glutenFree": "no",
+   "category_fodmap": "no",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Pizza Verdure Miste",
+   "description": "Roman-style pizza with tomato sauce, grilled vegetables and black olive puree",
+   "priceEuro": "7",
+   "category_area": "Mediterranean",
+   "category_glutenFree": "no",
+   "category_fodmap": "no",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Olives",
+   "description": "Marinated olives with lemon from Nyon and Cerignola",
+   "priceEuro": "5",
+   "category_area": "Mediterranean",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Grilled Broccolini",
+   "description": "Broccolini grilled on charcoal, with Maldon salt and a splash of peppery olive oil from Italy",
+   "priceEuro": "6",
+   "category_area": "Mediterranean",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Hummus",
+   "description": "Our silky-smooth Lebanese hummus",
+   "priceEuro": "4",
+   "category_area": "Middle East",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Falafel",
+   "description": "Crispy falafels with tomato salsa",
+   "priceEuro": "7",
+   "category_area": "Middle East",
+   "category_glutenFree": "yes",
+   "category_fodmap": "no",
+   "category_chiliStrength": "1"
+ },
+ {
+   "dish": "Baba Ganoush",
+   "description": "Aubergine dip",
+   "priceEuro": "4",
+   "category_area": "Middle East",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Tabbouleh",
+   "description": "Chopped mint and parsely salad, with tomatoes and bulgur",
+   "priceEuro": "5",
+   "category_area": "Middle East",
+   "category_glutenFree": "no",
+   "category_fodmap": "no",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Dolmades",
+   "description": "Vine leaves stuffed with rice and herbs",
+   "priceEuro": "5",
+   "category_area": "Middle East",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Butter Beans",
+   "description": "Butter beans in a spicy tomato sauce, flavoured with fresh dill",
+   "priceEuro": "6",
+   "category_area": "Mediterranean",
+   "category_glutenFree": "yes",
+   "category_fodmap": "no",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Potato salad",
+   "description": "Potato salad with marinated shallots, black olives, mustard vinaigrette, sprinkled with dry-roasted onions",
+   "priceEuro": "7",
+   "category_area": "Europe",
+   "category_glutenFree": "yes",
+   "category_fodmap": "no",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Pintxos Plate",
+   "description": "A collection of pintxos: pan-fried mushrooms with parsely and garlic, roasted and marinated red bell peppers, crushed white beans flavoured with lemon",
+   "priceEuro": "8",
+   "category_area": "Mediterranean",
+   "category_glutenFree": "no",
+   "category_fodmap": "no",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Garlic Baguette",
+   "description": "Warm and crispy french baguette filled with garlic and parsley pure",
+   "priceEuro": "7",
+   "category_area": "Europe",
+   "category_glutenFree": "no",
+   "category_fodmap": "no",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Bao",
+   "description": "Chinese bao with pak choi, deep-fried tofu and plum sauce",
+   "priceEuro": "7",
+   "category_area": "Asian",
+   "category_glutenFree": "no",
+   "category_fodmap": "no",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Kimchi",
+   "description": "Fermented cabbage with chili",
+   "priceEuro": "5",
+   "category_area": "Asian",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "2"
+ },
+ {
+   "dish": "Tofu Fritters",
+   "description": "Deep-fried, marinated tofu with satay sauce",
+   "priceEuro": "7",
+   "category_area": "Asian",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "1"
+ },
+ {
+   "dish": "Bibimbap Tofu",
+   "description": "A small bowl of rice, vegetables and deep-fried marinated tofu, with soy and chilli",
+   "priceEuro": "12",
+   "category_area": "Asian",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "1"
+ },
+ {
+   "dish": "Brownie",
+   "description": "Chocolate brownie with caramel sauce and salty peanuts",
+   "priceEuro": "7",
+   "category_area": "Dessert",
+   "category_glutenFree": "no",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Coconut Ice Cream",
+   "description": "Coconut Ice Cream with caramel, chocolate and raspberry sauce",
+   "priceEuro": "7",
+   "category_area": "Dessert",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Candy Platter",
+   "description": "Our collection of homemade candies",
+   "priceEuro": "7",
+   "category_area": "Dessert",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Raspberry Sorbet",
+   "description": "Raspberry sorbet with shaved dark chocolate",
+   "priceEuro": "7",
+   "category_area": "Dessert",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Panna Cotta",
+   "description": "Coconut panna cotta with Mauritian vanilla and strawberry sauce",
+   "priceEuro": "7",
+   "category_area": "Dessert",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Sweet Pear",
+   "description": "Pear cooked with sugar, star anis and cinnamon, served with roasted hazelnuts, chocolate and caramel sauce",
+   "priceEuro": "7",
+   "category_area": "Dessert",
+   "category_glutenFree": "yes",
+   "category_fodmap": "no",
+   "category_chiliStrength": "0"
+ },
+ {
+   "dish": "Dall Poori",
+   "description": "Deep-fried bread filled with lentils",
+   "priceEuro": "7",
+   "category_area": "Asian",
+   "category_glutenFree": "no",
+   "category_fodmap": "no",
+   "category_chiliStrength": "1"
+ },
+ {
+   "dish": "Potato Pakora",
+   "description": "Fried crushed potatoes with coriander",
+   "priceEuro": "6",
+   "category_area": "Asian",
+   "category_glutenFree": "yes",
+   "category_fodmap": "yes",
+   "category_chiliStrength": "2"
+ }
+]

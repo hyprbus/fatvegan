@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+}
+
+.flexContainer {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.noBackground {
+  background-image: none;
+}
+
+.background1 {
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  min-height: 100%;
+}
+
+/* general class for sections of text in the app */
+/* note: does not work! fix. */
+.sectionElement {
+  width: 100%;
+}
+
+/* paragraph styling */
+
+.statictext {
+  font-family: 'Signika', sans-serif;
+  color: #444444;
+  background-color: #eee;
+  margin-bottom: .5em;
+  width: 100%;
+  /* should insert line break for multiline react text components */
+  white-space: pre-line;
+}
+
+/* links formatting */
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.phone {
+  background-color: greenyellow;
+  font-weight: bold;
+}
+
+/* menu items styling */
+
+.menu {
+  font-family: 'Signika', sans-serif;
+  background-color: greenyellow;
+  flex-basis: 22%;
+  text-align: center;
+  line-height: 3em;
+  text-decoration: none;
+  min-height: 2em;
+  max-width: 30%;
+  margin: 1% 1% 0 0;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+
+/* selected react router navlink menu item */
+.menuActive {
+  color: white;
+  background-color: green;
+}
+
+.book {
+  color: blue;
+}
+
+.logo {
+  display: flex;
+  flex-basis: 65%;
+  font-size: 2.2em;
+  text-align: center;
+  color: orangered;
+  background-color: yellow;
+  align-items: center;
+  justify-content: center;
+}
+
+.slogan {
+  display: flex;
+  flex-basis: 33%;
+  font-family: 'Alfa Slab One', Arial, sans-serif;
+  font-size: .8em;
+  text-align: left;
+  padding: 0 0 0 2%;
+  background-color: orangered;
+  color: yellow;
+  align-items: center;
+}
+
+.heading {
+  font-family: 'Alfa Slab One', Arial, sans-serif;
+  height: 10vh;
+}
+
+.textHeader {
+  font-family: 'Signika', sans-serif;
+  font-size: 1.5em;
+  color: #444444;
+  background-color: #eee;
+  margin-bottom: .5em;
+  width: 100%;
+}
+
+/* for removing right margin on last item in a row */
+
+#lastItemOnRow {
+  margin-right: 0;
+}
