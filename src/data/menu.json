@@ -1,4 +1,13 @@
 [
+  {
+    "dish": "Dall Poori",
+    "description": "Deep-fried bread filled with lentils",
+    "priceEuro": "7",
+    "category_area": "Asian",
+    "category_glutenFree": "no",
+    "category_fodmap": "no",
+    "category_chiliStrength": "1"
+  },
  {
    "dish": "Fries and Ketchup",
    "description": "Triple-fried, hand-cut Rosamunda potato chips with smoked tomato ketchup",
@@ -268,15 +277,6 @@
    "category_glutenFree": "yes",
    "category_fodmap": "no",
    "category_chiliStrength": "0"
- },
- {
-   "dish": "Dall Poori",
-   "description": "Deep-fried bread filled with lentils",
-   "priceEuro": "7",
-   "category_area": "Asian",
-   "category_glutenFree": "no",
-   "category_fodmap": "no",
-   "category_chiliStrength": "1"
  },
  {
    "dish": "Potato Pakora",

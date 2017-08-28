@@ -11,7 +11,7 @@ import {
 // Custom React Components:
 import Home from '../components/Home.js';
 import Hours from '../components/Hours.js';
-import Food from '../components/Food.js';
+import Food from './Food.js'; // Food.js has state and state-related logic so it's a container
 import Book from '../components/Book.js';
 import Diet from '../components/Diet.js';
 import Restaurant from '../components/Restaurant.js';
@@ -22,10 +22,17 @@ import UrlNotFound from '../components/UrlNotFound.js'; // note: not working wit
 import readFile from '../functions/readFile.js';
 import openToday from '../functions/openToday.js';
 
-const hours = "../src/data/hours.json";
-const myDate = new Date();
-const menu = "../src/data/menu.json";
+// note difference between dev and deployment paths 
+// dev path:
+// const basePath = '/fatvegan/src';
+// prod path:
+// const basePath = '/work/fatvegan';
+
 const basePath = '/fatvegan/src';
+const hours = basePath + '/data/hours.json';
+const menu = basePath + '/data/menu.json';
+
+const myDate = new Date();
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -36,7 +43,7 @@ class Navigation extends React.Component {
       openToday: ""
     };
     // binding only need for event handlers, not arrow functions for handling of scope for "this"
-    // this.setOpenHours = this.setOpenHours.bind(this);
+    // e.g. this.setOpenHours = this.setOpenHours.bind(this);
   }
 
   setHours () {
@@ -79,7 +86,7 @@ class Navigation extends React.Component {
           <Switch>
             <Route exact path="/" render={()=><Home opentoday={this.state.openToday} /> } />
             <Route path="/book" component={Book}/>
-            <Route path="/food" component={Food}/>
+            <Route path="/food" render={() => <Food menu={this.state.menu} /> } />
             <Route path="/hours" render={() => <Hours hours={this.state.hours} /> } />
             <Route path="/restaurant" component={Restaurant}/>
             <Route path="/diet" component={Diet}/>

@@ -15,7 +15,12 @@ var config = {
             include: DEV,
             loader: "babel-loader",
         }]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+          'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
+        })
+      ],
 };
 
 module.exports = config;
