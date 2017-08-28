@@ -6,7 +6,7 @@ import StaticText from './StaticText.js';
 const Restaurant = () => {
     const content = 
     `This is our idea: serve the tastiest, most satisfying vegan food in the city.
-    Not watered-down vegan version of other dishes, but dishes that were vegan from the start:
+    Not watered-down vegan versions of other dishes, but dishes that were vegan from the start:
     cruncy potato chips, grilled vegetables, guacamole, Indian tomato soup, hummus, falafel, Marinara pizza... are you drooling yet?
     We take pride in making our dishes authentic and using the best ingredients and spices.
     We bake our own sourdough bread, which you also can buy home. Be warned though, it's addictive.

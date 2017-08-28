@@ -33,7 +33,7 @@ body {
   background-color: #eee;
   margin-bottom: .5em;
   width: 100%;
-  /* should insert line break for multiline react text components */
+  /* inserts line break for multiline react text components */
   white-space: pre-line;
 }
 
@@ -117,4 +117,19 @@ a {
 
 #lastItemOnRow {
   margin-right: 0;
+}
+
+/* Menu styling: menu, dish and dish elements */
+
+.menuStyle {
+  background-color: lightgoldenrodyellow;
+}
+
+.dishStyle {
+  background-color: white;
+  margin: .2em 0 .5em;
+}
+
+.filterMenu {
+  background-color: lightblue;
 }
