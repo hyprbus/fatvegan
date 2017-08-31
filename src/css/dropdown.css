@@ -1,0 +1,32 @@
+/* Stylesheet for DropDown React component */
+
+/* DropDown container component */
+.dropDown {
+    background-color: lightgoldenrodyellow;
+}
+
+/* DropDown selector */
+.dropDownSelector {
+
+}
+
+/* DropDown list */
+.dropDownList {
+
+}
+
+/* DropDown item */
+/* Normal and selected */
+.dropDownItem {
+    background-color: lightsalmon
+}
+
+.dropDownItemSelected {
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}

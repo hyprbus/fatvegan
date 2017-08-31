@@ -125,11 +125,20 @@ a {
   background-color: lightgoldenrodyellow;
 }
 
+.filterMenu {
+  background-color: lightblue;
+}
+
+
 .dishStyle {
   background-color: white;
   margin: .2em 0 .5em;
 }
 
-.filterMenu {
-  background-color: lightblue;
+.dishName {
+  font-weight: bold;
+}
+
+.dishDescription {
+  font-size: .8em;
 }

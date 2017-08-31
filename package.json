@@ -26,5 +26,9 @@
       "es2015",
       "react"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-plugin-react": "^7.3.0"
   }
 }

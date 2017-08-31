@@ -6,7 +6,7 @@
     "category_area": "Asian",
     "category_glutenFree": "no",
     "category_fodmap": "no",
-    "category_chiliStrength": "1"
+    "category_chiliStrength": "0"
   },
  {
    "dish": "Fries and Ketchup",
@@ -15,7 +15,7 @@
    "category_area": "North America",
    "category_glutenFree": "yes",
    "category_fodmap": "yes",
-   "category_chiliStrength": "0"
+   "category_chiliStrength": "1"
  },
  {
    "dish": "Nachos and Dips",
@@ -24,7 +24,7 @@
    "category_area": "Mexican",
    "category_glutenFree": "yes",
    "category_fodmap": "yes",
-   "category_chiliStrength": "1"
+   "category_chiliStrength": "2"
  },
  {
    "dish": "Black Bean Tacos",
@@ -33,7 +33,7 @@
    "category_area": "Mexican",
    "category_glutenFree": "yes",
    "category_fodmap": "yes",
-   "category_chiliStrength": "1"
+   "category_chiliStrength": "3"
  },
  {
    "dish": "Jalopenos",
@@ -285,6 +285,6 @@
    "category_area": "Asian",
    "category_glutenFree": "yes",
    "category_fodmap": "yes",
-   "category_chiliStrength": "2"
+   "category_chiliStrength": "3"
  }
 ]
