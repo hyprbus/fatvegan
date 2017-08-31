@@ -1,13 +1,26 @@
-import React from 'react';
+import React from "react"
 
 const Dish = (props) => {
   return (
     <div className="dishStyle">
-      <div>{props.dish + " " + props.priceeuro + "\u20AC"}</div>
-      <div>{props.description}</div>
+      <DishName dish={props.dish} priceeuro={props.priceeuro} />
+      <DishDescription description={props.description} />
       <div>Gluten-free: {props.glutenfree}</div>
+      <div>Hotness: {props.hotness}</div>
     </div>
   )
 }
 
-export default Dish;
+const DishName = (props) => {
+  return (
+    <div className="dishName">{props.dish + " " + props.priceeuro + "\u20AC"}</div>
+  )
+}
+
+const DishDescription = (props) => {
+  return (
+    <div className="dishDescription">{props.description}</div>
+  )
+}
+
+export default Dish
