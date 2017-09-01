@@ -119,16 +119,21 @@ a {
   margin-right: 0;
 }
 
-/* Menu styling: menu, dish and dish elements */
-
-.menuStyle {
-  background-color: lightgoldenrodyellow;
-}
+/* Menu search/filtering formats */
 
 .filterMenu {
   background-color: lightblue;
 }
 
+.filterCheckbox {
+  cursor: pointer;
+}
+
+/* Menu styling: menu, dish and dish elements */
+
+.menuStyle {
+  background-color: lightgoldenrodyellow;
+}
 
 .dishStyle {
   background-color: white;

@@ -48,7 +48,7 @@ class DropDown extends React.Component {
     const listValues = dropDownValues.map((item, i) => {
       return (
         <div
-          className={(item.filterValue === this.props.selected) ? "dropDownItem" : "dropDownItemSelected"}
+          className={(item.filterValue === this.props.selected) ? "dropDownItemSelected" : "dropDownItem"}
           key={i}
           onClick={this.handleHotnessInputChange.bind(null, item.filterValue)}
         >
@@ -64,7 +64,7 @@ class DropDown extends React.Component {
             e => e.filterValue === this.props.selected
           )].value}
         </div>
-        <div className={this.state.valuesVisible ? "dropDownList" : "hidden"}>
+        <div id={this.props.id} className={this.state.valuesVisible ? "dropDownList showDropDown" : "dropDownList hideDropDown"}>
           {listValues}
         </div>
       </div>
