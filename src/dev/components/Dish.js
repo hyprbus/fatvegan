@@ -7,6 +7,7 @@ const Dish = (props) => {
       <DishDescription description={props.description} />
       <div>Gluten-free: {props.glutenfree}</div>
       <div>Hotness: {props.hotness}</div>
+      <div>Category: {props.category}</div>
     </div>
   )
 }

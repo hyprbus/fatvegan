@@ -1,40 +1,54 @@
 import React from "react"
 import DropDown from "./DropDown.js"
+import FlipBox from "./FlipBox.js"
 
 class FilterMenu extends React.Component {
   constructor(props) {
     super(props)
-    this.handleGlutenFreeInputChange = this.handleGlutenFreeInputChange.bind(this)
-    this.handleHotnessInputChange = this.handleHotnessInputChange.bind(this)
+    this.state = {
+      activeFilter: ""
+    }
+    this.changeActiveFilter = this.changeActiveFilter.bind(this)
+    this.handleFilterChange = this.handleFilterChange.bind(this)
   }
 
-  handleGlutenFreeInputChange(e) {
-    this.props.onGlutenFreeInput(e.target.checked);
+  // set which filter (search box) has been clicked and is therefore active
+  changeActiveFilter(id) {
+    this.setState(prevState => ({
+      activeFilter: id
+    }))
   }
 
-  // pass selected hotness value upwards from child
-  handleHotnessInputChange(hotness) {
-    this.props.onHotnessInput(hotness)
+  // pass callback upwards when a filter has been selected
+  handleFilterChange(filter, value) {
+    this.props.setFilter(filter, value)
   }
 
   render() {
-    const hotnessValues = this.props.hotnessValues
+    // const hotnessValues = this.props.hotnessValues
     return (
       <form className="filterMenu">
-        <p>
-          <input type="checkbox"
-            checked={this.props.GlutenFreeOnly}
-            onChange={this.handleGlutenFreeInputChange}
-          />
-          {" "}
-          Gluten-free only
-        </p>
+        <FlipBox 
+          id="glutenFreeOnly"
+          label="Gluten-free only"
+          value={this.props.GlutenFreeOnly}
+          onValueSelect={this.handleFilterChange}
+        />
         <DropDown
           id="hotness"
-          label="Hotness"
-          values={hotnessValues}
+          active={this.state.activeFilter}
+          label="Hotness: "
+          values={this.props.hotnessValues}
           selected={this.props.hotnessFilter}
-          onValueSelect={this.handleHotnessInputChange}
+          onValueSelect={this.handleFilterChange}
+        />
+        <DropDown
+          id="foodCategory"
+          active={this.state.activeFilter}
+          label="Category: "
+          values={this.props.foodCategoryValues}
+          selected={this.props.foodCategoryFilter}
+          onValueSelect={this.handleFilterChange}
         />
       </form>
     )
