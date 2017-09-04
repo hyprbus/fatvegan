@@ -20,12 +20,14 @@ const Menu = (props) => {
         priceeuro={d.priceEuro}
         glutenfree={d.category_glutenFree}
         hotness={props.hotnessValues[parseInt(d.category_chiliStrength)]}
+        category={props.foodCategoryValues[parseInt(d.category_area)]}
       />
     )
     // all filtering of the menu here
     if (
       (glutenfreeFilter === false || d.category_glutenFree === "yes") &&
-      ((props.hotnessFilter === -1) || (parseInt(d.category_chiliStrength) === props.hotnessFilter))
+      ((props.hotnessFilter === -1) || (parseInt(d.category_chiliStrength) === props.hotnessFilter)) &&
+      ((props.foodCategoryFilter === -1) || (parseInt(d.category_area) === props.foodCategoryFilter))
     ) {
       dishes.push(dishComponent)
     }

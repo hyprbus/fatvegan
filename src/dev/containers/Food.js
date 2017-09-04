@@ -12,22 +12,18 @@ class Food extends React.Component {
     this.state = {
       glutenFreeOnly: false,
       hotness: -1,
-      hotnessValues: ["No Chili", "Slightly Hot", "Hot", "Very Hot"]
+      hotnessValues: ["No Chili", "Slightly Hot", "Hot", "Very Hot"],
+      foodCategory: -1,
+      foodCategoryValues: ["Asia", "Europe", "Mediterranean", "Mexico", "Middle East", "North America", "Dessert"]
     }
     // binding needed for event handlers for handling of scope of this operator
-    this.handleGlutenFreeInput = this.handleGlutenFreeInput.bind(this)
-    this.handleHotnessChange = this.handleHotnessChange.bind(this)
+    this.setFilter = this.setFilter.bind(this)
   }
 
-  handleGlutenFreeInput(glutenFreeOnly) {
+  // change dropdown filter value
+  setFilter(filter, value) {
     this.setState({
-      glutenFreeOnly: glutenFreeOnly
-    })
-  }
-
-  handleHotnessChange(hotness) {
-    this.setState({
-      hotness: hotness
+      [filter]: value
     })
   }
 
@@ -40,16 +36,19 @@ class Food extends React.Component {
         />
         <FilterMenu
           GlutenFreeOnly={this.state.glutenFreeOnly}
-          onGlutenFreeInput={this.handleGlutenFreeInput}
           hotnessFilter={this.state.hotness}
           hotnessValues={this.state.hotnessValues}
-          onHotnessInput={this.handleHotnessChange}
+          foodCategoryFilter={this.state.foodCategory}
+          foodCategoryValues={this.state.foodCategoryValues}
+          setFilter={this.setFilter}
         />
         <Menu
           menu={this.props.menu}
           glutenfreeonly={this.state.glutenFreeOnly}
           hotnessFilter={this.state.hotness}
           hotnessValues={this.state.hotnessValues}
+          foodCategoryFilter={this.state.foodCategory}
+          foodCategoryValues={this.state.foodCategoryValues}
         />
       </div>
     )

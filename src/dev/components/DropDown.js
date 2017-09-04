@@ -4,7 +4,7 @@
 // label
 // selected 
 // values array
-// onValueSelect = callback function for updating state
+// handleFilterChange = callback function for updating state
 
 import React from "react"
 
@@ -15,7 +15,7 @@ class DropDown extends React.Component {
       valuesVisible: false
     }
     this.flipVisibility = this.flipVisibility.bind(this)
-    this.handleHotnessInputChange = this.handleHotnessInputChange.bind(this)
+    this.handleFilterChange = this.handleFilterChange.bind(this)
   }
 
   // flip visibility of label element
@@ -23,17 +23,22 @@ class DropDown extends React.Component {
     this.setState(prevState => ({
       valuesVisible: !prevState.valuesVisible
     }))
-
   }
 
   // pass selected hotness value upwards from child
   // note that you're setting the state for two different component: Food and DropDown. What is best practice?
-  handleHotnessInputChange(hotness) {
+  handleFilterChange(value) {
     this.flipVisibility()
-    this.props.onValueSelect(hotness)
+    this.props.onValueSelect(this.props.id, value)
   }
 
   render() {
+    // if i'm not the selected filter, hide me
+    // this.state = {
+    //   valuesVisible: false
+    // }
+
+
     // create object array with dropdown values and dropdown filter keys, include generic values for "all" filter.
     // E.g. this.props.values = ["mild", "hot", "very hot"]
     // =>
@@ -50,7 +55,7 @@ class DropDown extends React.Component {
         <div
           className={(item.filterValue === this.props.selected) ? "dropDownItemSelected" : "dropDownItem"}
           key={i}
-          onClick={this.handleHotnessInputChange.bind(null, item.filterValue)}
+          onClick={this.handleFilterChange.bind(null, item.filterValue)}
         >
           {item.value}
         </div>
@@ -60,7 +65,7 @@ class DropDown extends React.Component {
     return (
       <div className="dropDown">
         <div className="dropDownSelector" onClick={this.flipVisibility}>
-          {this.props.label + ": " + dropDownValues[dropDownValues.findIndex(
+          {this.props.label + dropDownValues[dropDownValues.findIndex(
             e => e.filterValue === this.props.selected
           )].value}
         </div>
