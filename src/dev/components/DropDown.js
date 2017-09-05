@@ -21,7 +21,6 @@ class DropDown extends React.Component {
 
   // change visibility of label element to true or false, flip true <=> false if no argument is provided
   setVisibility(bool) {
-    console.log(typeof(bool))
     this.setState(prevState => ({
       valuesVisible: typeof(bool) === "undefined" ? !prevState.valuesVisible : bool
     }))
