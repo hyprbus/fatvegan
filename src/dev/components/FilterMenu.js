@@ -19,7 +19,6 @@ class FilterMenu extends React.Component {
     }))
   }
 
-  // pass callback upwards when a filter has been selected
   handleFilterChange(filter, value) {
     this.props.setFilter(filter, value)
   }
@@ -41,6 +40,7 @@ class FilterMenu extends React.Component {
           values={this.props.hotnessValues}
           selected={this.props.hotnessFilter}
           onValueSelect={this.handleFilterChange}
+          setToActive={this.changeActiveFilter}
         />
         <DropDown
           id="foodCategory"
@@ -49,6 +49,7 @@ class FilterMenu extends React.Component {
           values={this.props.foodCategoryValues}
           selected={this.props.foodCategoryFilter}
           onValueSelect={this.handleFilterChange}
+          setToActive={this.changeActiveFilter}
         />
       </form>
     )

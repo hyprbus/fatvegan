@@ -8,10 +8,10 @@ import {
   Switch
 } from 'react-router-dom';
 
-// Custom React Components:
+// Custom React Components
 import Home from '../components/Home.js';
 import Hours from '../components/Hours.js';
-import Food from './Food.js'; // Food.js has state and state-related logic so it's a container
+import Food from './Food.js';
 import Book from '../components/Book.js';
 import Diet from '../components/Diet.js';
 import Restaurant from '../components/Restaurant.js';
