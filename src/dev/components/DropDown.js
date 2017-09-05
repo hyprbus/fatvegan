@@ -19,7 +19,6 @@ class DropDown extends React.Component {
     this.handleLabelClick = this.handleLabelClick.bind(this)
   }
 
-  // change visibility of label element to true or false, flip true <=> false if no argument is provided
   setVisibility(bool) {
     this.setState(prevState => ({
       valuesVisible: typeof(bool) === "undefined" ? !prevState.valuesVisible : bool
