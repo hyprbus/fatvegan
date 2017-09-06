@@ -1,5 +1,6 @@
 var webpack = require("webpack");
 var path = require("path");
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var DEV = path.resolve(__dirname, "src/dev");
 var OUTPUT = path.resolve(__dirname, "src/scripts");
@@ -11,16 +12,28 @@ var config = {
         filename: "fatvegan.js"
     },
     module: {
-        loaders: [{
-            include: DEV,
-            loader: "babel-loader",
-        }]
+        rules: [{
+                test: /\.js$/,
+                loader: ["babel-loader"],
+                exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader', 
+                    use: ['css-loader?url=false', 'sass-loader']
+                })
+            }
+        ]
     },
     plugins: [
         new webpack.ProvidePlugin({
           'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
+        }),
+        new ExtractTextPlugin('../css/style.css', {
+            allChunks: true
         })
-      ],
-};
+    ]
+}
 
-module.exports = config;
+module.exports = config

@@ -1,5 +1,11 @@
+@import "./_variables.scss";
+
 body {
-  margin: 0;
+  margin: 1%;
+}
+
+.site {
+
 }
 
 .flexContainer {
@@ -16,23 +22,39 @@ body {
 .background1 {
   background-image: url(../images/background.jpg);
   background-size: cover;
+  padding: 1% solid white;
   min-height: 100%;
 }
 
 /* general class for sections of text in the app */
-/* note: does not work! fix. */
 .sectionElement {
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  margin-top: 1%;
 }
 
 /* paragraph styling */
 
+.textHeader {
+  font-family: 'Signika', sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #eee;
+  background-color: #444444;
+  /* margin: .5em 0 0 0; */
+  padding: 0 2% 0 2%;
+  width: 96%;
+}
+
 .statictext {
   font-family: 'Signika', sans-serif;
-  color: #444444;
-  background-color: #eee;
-  margin-bottom: .5em;
-  width: 100%;
+  line-height: 1.5em;
+  color: $static-text-color;
+  background-color: $static-text-bg-color;
+  padding: 1% 2% 1% 2%;
+  margin-bottom: 1%;
+  width: 96%;
   /* inserts line break for multiline react text components */
   white-space: pre-line;
 }
@@ -53,7 +75,8 @@ a {
 
 .menu {
   font-family: 'Signika', sans-serif;
-  background-color: greenyellow;
+  color: $clickable-color;
+  background-color: $clickable-bg-color;
   flex-basis: 22%;
   text-align: center;
   line-height: 3em;
@@ -61,6 +84,7 @@ a {
   min-height: 2em;
   max-width: 30%;
   margin: 1% 1% 0 0;
+  border: 2px solid white;
   flex-grow: 1;
   justify-content: space-between;
 }
@@ -68,8 +92,8 @@ a {
 
 /* selected react router navlink menu item */
 .menuActive {
-  color: white;
-  background-color: green;
+  color: $selected-color;
+  background-color: $selected-bg-color;
 }
 
 .book {
@@ -81,8 +105,8 @@ a {
   flex-basis: 65%;
   font-size: 2.2em;
   text-align: center;
-  color: orangered;
-  background-color: yellow;
+  color: white;
+  background-color: black;
   align-items: center;
   justify-content: center;
 }
@@ -94,23 +118,14 @@ a {
   font-size: .8em;
   text-align: left;
   padding: 0 0 0 2%;
-  background-color: orangered;
-  color: yellow;
+  background-color: white;
+  color: black;
   align-items: center;
 }
 
 .heading {
   font-family: 'Alfa Slab One', Arial, sans-serif;
   height: 10vh;
-}
-
-.textHeader {
-  font-family: 'Signika', sans-serif;
-  font-size: 1.5em;
-  color: #444444;
-  background-color: #eee;
-  margin-bottom: .5em;
-  width: 100%;
 }
 
 /* for removing right margin on last item in a row */
