@@ -1,0 +1,53 @@
+/* Stylesheet for DropDown React component */
+
+/* DropDown container component */
+.dropDown {
+  background-color: lightgoldenrodyellow;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding: 2px;
+}
+
+/* DropDown selector */
+.dropDownSelector {
+  cursor: pointer
+}
+
+/* DropDown list */
+.dropDownList {
+  font-family: sans-serif;
+}
+
+/* DropDown item */
+/* Normal and selected */
+.dropDownItem {
+  background-color: lightsalmon;
+  cursor: pointer;
+  font-weight: normal;
+  padding: 2px;
+}
+
+.dropDownItemSelected {
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 2px;
+}
+
+/* dropdown animations */
+
+.showDropDown {
+  /* max-height: 500px; */
+  display: block;
+  position: absolute;
+  z-index: 1;
+  /* transition: max-height .3s linear; */
+}
+
+.hideDropDown {
+  display: none;
+  /* max-height: 0; */
+  /* transition: max-height .3s linear; */
+}
