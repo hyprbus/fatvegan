@@ -1,8 +1,8 @@
 import React from "react"
-import setHTMLBackground from "../functions/setHTMLBackground.js"
 import Menu from "../components/Menu.js"
 import FilterMenu from "../components/FilterMenu.js"
 import TextHeader from "../components/TextHeader.js"
+import setHTMLBackground from "../functions/setHTMLBackground.js"
 
 // note: not a real container, since it doesn't retrieve the menu (Navigation.js does it). Change?
 
@@ -12,9 +12,11 @@ class Food extends React.Component {
     this.state = {
       glutenFreeOnly: false,
       hotness: -1,
-      hotnessValues: ["No Chili", "Slightly Hot", "Hot", "Very Hot"],
+      hotnessValues: ["(all strengths)", "No Chili", "Slightly Hot", "Hot", "Very Hot"],
       foodCategory: -1,
-      foodCategoryValues: ["Asia", "Europe", "Mediterranean", "Mexico", "Middle East", "North America", "Dessert"]
+      foodCategoryValues: ["(all categories)", "Asia", "Europe", "Mediterranean", "Mexico", "Middle East", "North America", "Dessert"],
+      fodmap: -1,
+      fodmapValues: ["(all)", ":(", ":|", ":)"]
     }
     // binding needed for event handlers for handling of scope of this operator
     this.setFilter = this.setFilter.bind(this)
@@ -27,7 +29,10 @@ class Food extends React.Component {
     })
   }
 
-  // setHTMLBackground(0) // fix this as a state change!
+  componentDidMount() { 
+    setHTMLBackground(0)
+  }
+
   render() {
     return (
       <div className="sectionElement">
@@ -40,6 +45,8 @@ class Food extends React.Component {
           hotnessValues={this.state.hotnessValues}
           foodCategoryFilter={this.state.foodCategory}
           foodCategoryValues={this.state.foodCategoryValues}
+          fodmapFilter={this.state.fodmap}
+          fodmapValues={this.state.fodmapValues}
           setFilter={this.setFilter}
         />
         <Menu
@@ -49,6 +56,8 @@ class Food extends React.Component {
           hotnessValues={this.state.hotnessValues}
           foodCategoryFilter={this.state.foodCategory}
           foodCategoryValues={this.state.foodCategoryValues}
+          fodmapFilter={this.state.fodmap}
+          fodmapValues={this.state.fodmapValues}
         />
       </div>
     )

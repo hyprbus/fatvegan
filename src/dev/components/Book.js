@@ -1,10 +1,17 @@
 import React from "react"
-import setHTMLBackground from "../functions/setHTMLBackground.js"
 import TextHeader from "./TextHeader.js"
 import StaticText from "./StaticText.js"
+import setHTMLBackground from "../functions/setHTMLBackground.js"
 
-const Book = () => {
-    setHTMLBackground(1)
+class Book extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() { 
+    setHTMLBackground(0)
+  }
+  render() {
     return (
       <div className="sectionElement">
         <TextHeader text="Book" />
@@ -12,5 +19,6 @@ const Book = () => {
       </div>
     )
   }
+}
 
 export default Book

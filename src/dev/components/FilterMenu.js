@@ -29,14 +29,14 @@ class FilterMenu extends React.Component {
       <form className="filterMenu">
         <FlipBox 
           id="glutenFreeOnly"
-          label="Gluten-free only"
+          label="Gluten-free"
           value={this.props.GlutenFreeOnly}
           onValueSelect={this.handleFilterChange}
         />
         <DropDown
           id="hotness"
           active={this.state.activeFilter}
-          label="Hotness: "
+          label=""
           values={this.props.hotnessValues}
           selected={this.props.hotnessFilter}
           onValueSelect={this.handleFilterChange}
@@ -45,12 +45,21 @@ class FilterMenu extends React.Component {
         <DropDown
           id="foodCategory"
           active={this.state.activeFilter}
-          label="Category: "
+          label=""
           values={this.props.foodCategoryValues}
           selected={this.props.foodCategoryFilter}
           onValueSelect={this.handleFilterChange}
           setToActive={this.changeActiveFilter}
         />
+        <DropDown
+        id="fodmap"
+        active={this.state.activeFilter}
+        label="Fodmap: "
+        values={this.props.fodmapValues}
+        selected={this.props.fodmapFilter}
+        onValueSelect={this.handleFilterChange}
+        setToActive={this.changeActiveFilter}
+      />
       </form>
     )
   }

@@ -1,11 +1,11 @@
 @import "./_variables.scss";
 
+
+/* debug border */
+/* * { border: 1px solid red; } */
+
 body {
-  margin: 1%;
-}
-
-.site {
-
+  margin: $body-margin;
 }
 
 .flexContainer {
@@ -15,7 +15,7 @@ body {
   flex-wrap: wrap;
 }
 
-.noBackground {
+.background0 {
   background-image: none;
 }
 
@@ -37,18 +37,18 @@ body {
 /* paragraph styling */
 
 .textHeader {
-  font-family: 'Signika', sans-serif;
-  font-size: 1.5em;
+  font-family: $heading-font, sans-serif;
+  font-size: 1.25em;
   font-weight: bold;
-  color: #eee;
-  background-color: #444444;
+  color: $text-header-color;
+  background-color: $text-header-bg-color;
   /* margin: .5em 0 0 0; */
   padding: 0 2% 0 2%;
   width: 96%;
 }
 
 .statictext {
-  font-family: 'Signika', sans-serif;
+  font-family: $text-font, sans-serif;
   line-height: 1.5em;
   color: $static-text-color;
   background-color: $static-text-bg-color;
@@ -59,6 +59,12 @@ body {
   white-space: pre-line;
 }
 
+/* for div elements with table cell behaviour */
+.tableLikeCell {
+  display: inline-block;
+  width: 35%;
+}
+
 /* links formatting */
 
 a {
@@ -66,27 +72,38 @@ a {
   text-decoration: none;
 }
 
+/* highlighted elements, for visual attention */
+/* not clickable, but pointing out important information */
+
+.highlighted {
+  color: $highlight-color;
+  background-color: $highlight-bg-color;
+}
+
+/* formatting the phone element */
 .phone {
-  background-color: greenyellow;
-  font-weight: bold;
+  background-color: $clickable-bg-color;
+  color: $clickable-color;
+  font-weight: $clickable-weight;
 }
 
 /* menu items styling */
 
 .menu {
-  font-family: 'Signika', sans-serif;
+  font-family: $menu-font, sans-serif;
+  font-weight: $clickable-weight;
   color: $clickable-color;
   background-color: $clickable-bg-color;
   flex-basis: 22%;
+  flex-grow: 1;
+  justify-content: space-between;
   text-align: center;
   line-height: 3em;
   text-decoration: none;
   min-height: 2em;
-  max-width: 30%;
+  max-width: 50%;
   margin: 1% 1% 0 0;
-  border: 2px solid white;
-  flex-grow: 1;
-  justify-content: space-between;
+  /*  border: 2px solid white; */
 }
 
 
@@ -103,6 +120,7 @@ a {
 .logo {
   display: flex;
   flex-basis: 65%;
+  font-family: $logo-font, serif;
   font-size: 2.2em;
   text-align: center;
   color: white;
@@ -114,7 +132,7 @@ a {
 .slogan {
   display: flex;
   flex-basis: 33%;
-  font-family: 'Alfa Slab One', Arial, sans-serif;
+  font-family: $slogan-font, serif;
   font-size: .8em;
   text-align: left;
   padding: 0 0 0 2%;
@@ -124,7 +142,6 @@ a {
 }
 
 .heading {
-  font-family: 'Alfa Slab One', Arial, sans-serif;
   height: 10vh;
 }
 
@@ -134,31 +151,68 @@ a {
   margin-right: 0;
 }
 
-/* Menu search/filtering formats */
-
-.filterMenu {
-  background-color: lightblue;
-}
-
-.filterCheckbox {
-  cursor: pointer;
-}
 
 /* Menu styling: menu, dish and dish elements */
 
 .menuStyle {
-  background-color: lightgoldenrodyellow;
+  font-family: $dishes-font, serif;
+  width: 100%;
+}
+
+/* menu category row formatting, eg "Asia", "Desserts" */
+
+.categoryRow {
+  color: $menu-category-color;
+  background-color: $menu-category-bg-color;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0 2% 0 2%;
+  margin: 1em 0 0 0;
 }
 
 .dishStyle {
-  background-color: white;
-  margin: .2em 0 .5em;
+  background-color: $dish-bg-color;
+  padding: .75em 0 .25em 0;
+  border-bottom: 1px dotted black;
 }
 
-.dishName {
-  font-weight: bold;
+.dishStyle:last-child {
+  border-bottom: 0;
 }
+
+ul.dishHeader {
+  font-weight: bold;
+  /* max-width: 37em; */
+  padding: 0;
+  overflow-x: hidden;
+  list-style: none;
+  margin: 0;
+  border: 1px 0 0 0 solid gray;
+}
+
+li:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content: ".................................................................................................................................................................................................................................................................................................................................";
+}
+
+span:first-child {
+  padding-right: .3em;
+  background-color: $dish-bg-color;
+}
+
+span + span {
+  float: right;
+  padding-left: 0.3em;
+  background-color: $dish-bg-color;
+}
+
+span + span:before {
+  padding-right: 0.15em;
+}
+
 
 .dishDescription {
-  font-size: .8em;
+  font-size: .9em;
 }

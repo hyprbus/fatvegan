@@ -1,11 +1,38 @@
+$body-margin: 1%;
+
 $clickable-color: #000;
 $clickable-bg-color: rgb(246, 169, 131);
+$clickable-weight: normal;
 
 $selected-color: white;
 $selected-bg-color: #F52204;
 
 $static-text-color: #444;
-$static-text-bg-color: #eee;
+$static-text-bg-color: #fff;
 
-$text-header-color: #eee;
+$text-header-color: #fff;
 $text-header-bg-color: #444;
+
+$highlight-color: #000;
+$highlight-bg-color: rgb(237, 246, 174);
+
+$filter-color: $clickable-color;
+$filter-bg-color: $clickable-bg-color;
+$filter-height: 2em;
+$filter-width: 35%;
+$max-filter-width: 48%;
+
+$dish-bg-color: #fff;
+
+/* this is (100% - 2*the body margin) * $max-filter-width, to fix dropdown list = dropdown label width */
+$dropdown-list-width: 39.2%;
+
+$logo-font: "Alfa Slab One";
+$slogan-font: "Alfa Slab One";
+$menu-font: "Vollkorn";
+$heading-font: "Vollkorn";
+$text-font: "Vollkorn";
+$filter-font: "Vollkorn";
+$dishes-font: "Vollkorn";
+$menu-category-color: $text-header-color;
+$menu-category-bg-color: $text-header-bg-color;

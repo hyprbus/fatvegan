@@ -1,53 +1,66 @@
-/* Stylesheet for DropDown React component */
+/* Stylesheet for DropDown and FlipBox React components */
 
-/* DropDown container component */
-.dropDown {
-  background-color: lightgoldenrodyellow;
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  padding: 2px;
+@import "./_variables.scss";
+
+/* The FilterMenu flex container formatting */
+.filterMenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 100%; /* this because FilterMenu is a flex item in itself, in addition to being a flex container */
+  justify-content: space-between;
 }
 
-/* DropDown selector */
-.dropDownSelector {
-  cursor: pointer
+/* DropDown container component, now just debug info */
+.dropDown {
+  font-size: .8em;
+  flex-basis: $filter-width;
+  flex-grow: 1;
+  max-width: $max-filter-width;
+}
+
+/* clickable filters / dropdown selectors looks */
+.filterSelector {
+  cursor: pointer;
+  color: $filter-color;
+  background-color: $filter-bg-color;
+  line-height: $filter-height;
+  font-family: $filter-font, sans-serif;
+  text-align: center;
+  position: relative;
+  margin: 1% 0 1% 0;
 }
 
 /* DropDown list */
 .dropDownList {
-  font-family: sans-serif;
+  cursor: pointer;
+  line-height: $filter-height;
+  font-family: $filter-font, sans-serif;
+  width: $dropdown-list-width;
 }
 
-/* DropDown item */
-/* Normal and selected */
+/* DropDown items */
 .dropDownItem {
-  background-color: lightsalmon;
-  cursor: pointer;
   font-weight: normal;
-  padding: 2px;
+  color: black;
+  background-color: lightsalmon;
+  padding: 0 0 0 5%;
 }
 
 .dropDownItemSelected {
   background-color: orange;
   color: white;
-  cursor: pointer;
   font-weight: bold;
-  padding: 2px;
 }
 
-/* dropdown animations */
+/* dropdown show and hide */
 
 .showDropDown {
-  /* max-height: 500px; */
   display: block;
   position: absolute;
   z-index: 1;
-  /* transition: max-height .3s linear; */
 }
 
 .hideDropDown {
   display: none;
-  /* max-height: 0; */
-  /* transition: max-height .3s linear; */
 }
