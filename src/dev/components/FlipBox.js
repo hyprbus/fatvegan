@@ -11,13 +11,13 @@ class FlipBox extends React.Component {
   }
 
   render () {return (
-    <p className="filterCheckbox">
-      <input type="checkbox"
+    <div className="dropDown filterSelector">
+      <input className="filterSelector" type="checkbox"
         checked={this.props.value}
         onChange={this.handleFilterChange}
       />
       {" " + this.props.label}
-    </p>
+    </div>
   )
   }
 }

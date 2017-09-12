@@ -10,7 +10,7 @@ import Dish from "./Dish.js"
 
 const Menu = (props) => {
   let dishes = []
-  let glutenfreeFilter = props.glutenfreeonly
+  let lastCategory = null
   props.menu.forEach(function (d, i) {
     let dishComponent = (
       <Dish
@@ -19,17 +19,29 @@ const Menu = (props) => {
         description={d.description}
         priceeuro={d.priceEuro}
         glutenfree={d.category_glutenFree}
-        hotness={props.hotnessValues[parseInt(d.category_chiliStrength)]}
-        category={props.foodCategoryValues[parseInt(d.category_area)]}
+        hotness={props.hotnessValues[parseInt(d.category_chiliStrength+1)]}
+        category={props.foodCategoryValues[parseInt(d.category_area+1)]}
+        fodmap={props.fodmapValues[parseInt(d.category_fodmap+1)]}
       />
     )
     // all filtering of the menu here
     if (
-      (glutenfreeFilter === false || d.category_glutenFree === "yes") &&
+      (props.glutenfreeonly === false || d.category_glutenFree === "yes") &&
       ((props.hotnessFilter === -1) || (parseInt(d.category_chiliStrength) === props.hotnessFilter)) &&
-      ((props.foodCategoryFilter === -1) || (parseInt(d.category_area) === props.foodCategoryFilter))
+      ((props.foodCategoryFilter === -1) || (parseInt(d.category_area) === props.foodCategoryFilter)) &&
+      ((props.fodmapFilter === -1) || (parseInt(d.category_fodmap) === props.fodmapFilter))
     ) {
+
+      // before an actual dish should be pushed onto the menu, check if the category header row needs to be added first
+      if (d.category_area !== lastCategory) {
+        dishes.push(
+          <CategoryRow 
+            key={"category" + d.category_area} 
+            category={props.foodCategoryValues[parseInt(d.category_area+1)]}
+        />)
+      }
       dishes.push(dishComponent)
+      lastCategory = d.category_area
     }
   }
 
@@ -38,6 +50,12 @@ const Menu = (props) => {
     <div className="menuStyle">
       {dishes}
     </div>
+  )
+}
+
+const CategoryRow = (props) => {
+  return (
+    <div className="categoryRow">{props.category}</div>
   )
 }
 

@@ -46,15 +46,17 @@ class DropDown extends React.Component {
 
   render() {
     let dropDownValues = []
-    // set first selectable value to be generic "all" value with id -1
-    dropDownValues.push({value: "(all)", filterValue: -1})
-    this.props.values.forEach(function(element, index) {
+    // first selectable value = all values = first value in the array value, set id = -1
+    dropDownValues.push({value: this.props.values[0], filterValue: -1})
+    // drop the "all values" value from values array
+    let v = this.props.values.slice(1)
+    v.forEach(function(element, index) {
       dropDownValues.push({value: element, filterValue: index})
     })
     const listValues = dropDownValues.map((item, i) => {
       return (
         <div
-          className={(item.filterValue === this.props.selected) ? "dropDownItemSelected" : "dropDownItem"}
+          className={(item.filterValue === this.props.selected) ? "dropDownItem dropDownItemSelected" : "dropDownItem"}
           key={i}
           onClick={this.handleFilterChange.bind(null, item.filterValue)}
         >
@@ -65,17 +67,18 @@ class DropDown extends React.Component {
     )
     return (
       <div className="dropDown">
-        <div className="dropDownSelector" onClick={this.handleLabelClick}>
+        <div className="filterSelector" onClick={this.handleLabelClick}>
           {this.props.label + dropDownValues[dropDownValues.findIndex(
             e => e.filterValue === this.props.selected
           )].value}
         </div>
         <div 
-          id={this.props.id} 
-          className={(this.state.valuesVisible && (this.props.active === this.props.id)) ? "dropDownList showDropDown" : "dropDownList hideDropDown"}
+        id={this.props.id} 
+        className={(this.state.valuesVisible && (this.props.active === this.props.id)) ? "dropDownList showDropDown" : "dropDownList hideDropDown"}
         >
           {listValues}
         </div>
+
       </div>
     )
   }

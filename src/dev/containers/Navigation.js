@@ -1,5 +1,3 @@
-// the admin navigation view for editing basic information
-
 import React from 'react';
 import {
   BrowserRouter,
@@ -32,40 +30,42 @@ const basePath = '/fatvegan/src';
 const hours = basePath + '/data/hours.json';
 const menu = basePath + '/data/menu.json';
 
-const myDate = new Date();
+const today = new Date();
 
 class Navigation extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       hours: [],
       menu: [],
+      today: null,
       openToday: ""
-    };
-    // binding only need for event handlers, not arrow functions for handling of scope for "this"
-    // e.g. this.setOpenHours = this.setOpenHours.bind(this);
+    }
   }
 
   setHours () {
-    // prevState - best practice since state is updated asynchronously, google for info
     readFile(hours, (hrs) => {
-      this.setState(prevState => ({hours: hrs}))
-    });
+      this.setState(prevState => ({
+        hours: hrs,
+        today: today.getDay()
+      }))
+    })
   }
   
   setMenu () {
     readFile(menu, (m) => {
-      this.setState(prevState => ({menu: m}))
+      this.setState({menu: m.sort((a, b) => a.category_area - b.category_area)})
     })
   }
 
   setOpenHours() {
     readFile(hours, (hrs) => { 
-      this.setState(prevState => ({openToday: openToday(hrs, myDate)}));
+      this.setState({openToday: openToday(hrs, today)});
      })
   }
 
-  componentDidMount() {    
+  componentDidMount() { 
+    console.log("Navigation component did mount.")   
     this.setHours();
     this.setMenu();
     this.setOpenHours();
@@ -74,7 +74,7 @@ class Navigation extends React.Component {
   render() {
     return (
       <BrowserRouter basename={basePath}>
-        <div className="flexContainer">
+        <div className={"flexContainer background" + this.state.backgroundImage}>
           <div className="logo heading">Fat Vegan</div>
           <div className="slogan">100% vegan<br></br>100% pleasure</div>
           <NavLink exact to="/" className="menu" activeClassName="menuActive">Home</NavLink>
@@ -85,9 +85,9 @@ class Navigation extends React.Component {
           <NavLink to="/diet" className="menu" activeClassName="menuActive">Special Diet?</NavLink>
           <Switch>
             <Route exact path="/" render={()=><Home opentoday={this.state.openToday} /> } />
-            <Route path="/book" component={Book}/>
+            <Route path="/book" render={() => <Book /> } />
             <Route path="/food" render={() => <Food menu={this.state.menu} /> } />
-            <Route path="/hours" render={() => <Hours hours={this.state.hours} /> } />
+            <Route path="/hours" render={() => <Hours hours={this.state.hours} today={this.state.today} /> } />
             <Route path="/restaurant" component={Restaurant}/>
             <Route path="/diet" component={Diet}/>
             <Route component={UrlNotFound} />

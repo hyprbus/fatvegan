@@ -3,18 +3,24 @@ import React from "react"
 const Dish = (props) => {
   return (
     <div className="dishStyle">
-      <DishName dish={props.dish} priceeuro={props.priceeuro} />
+      <DishHeader dish={props.dish} priceeuro={props.priceeuro} />
       <DishDescription description={props.description} />
       <div>Gluten-free: {props.glutenfree}</div>
       <div>Hotness: {props.hotness}</div>
       <div>Category: {props.category}</div>
+      <div>FODMAP: {props.fodmap}</div>
     </div>
   )
 }
 
-const DishName = (props) => {
+const DishHeader = (props) => {
   return (
-    <div className="dishName">{props.dish + " " + props.priceeuro + "\u20AC"}</div>
+    <ul className="dishHeader">
+      <li>
+        <span>{props.dish}</span>
+        <span>{props.priceeuro + "\u20AC"}</span>
+      </li>
+    </ul>
   )
 }
 
