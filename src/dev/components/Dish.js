@@ -1,14 +1,18 @@
 import React from "react"
+import Icon from "./Icon.js"
 
 const Dish = (props) => {
   return (
     <div className="dishStyle">
       <DishHeader dish={props.dish} priceeuro={props.priceeuro} />
       <DishDescription description={props.description} />
-      <div>Gluten-free: {props.glutenfree}</div>
       <div>Hotness: {props.hotness}</div>
-      <div>Category: {props.category}</div>
       <div>FODMAP: {props.fodmap}</div>
+      <Icon 
+        type="boolean" 
+        value={props.gluten} 
+        images={["images/glutenfree-icon.svg"]} 
+      />
     </div>
   )
 }

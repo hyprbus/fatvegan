@@ -28,20 +28,26 @@ class DropDown extends React.Component {
 
   // pass selected dropdown value to supplied callback function
   // always set visibility to false
-    handleFilterChange(value) {
+  handleFilterChange(value) {
     this.setVisibility(false)
     this.props.onValueSelect(this.props.id, value)
   }
 
-  // when clicking on the dropdown label, set me to active and flip the visibility of my value list
-  // check if I wasn't already active - then set visibility to true, don't flip it 
+  // When clicking on the dropdown label, set me to active and flip the visibility of my value list
+  // check if I wasn't already active - then set visibility to true, don't flip it.
+  // But first, handle special case of value list containing only two values, thereby being a "toggle" label
   handleLabelClick() {
-    if (this.props.active !== this.props.id) {
-      this.setVisibility(true)
-    } else {
-      this.setVisibility()
-    }
     this.props.setToActive(this.props.id)
+    if (this.props.values.length === 2) {
+      let toggleValue = (this.props.selected === 0) ? -1 : 0
+      this.handleFilterChange(toggleValue)
+    } else {
+      if (this.props.active !== this.props.id) {
+        this.setVisibility(true)
+      } else {
+        this.setVisibility()
+      }
+    }
   }
 
   render() {
