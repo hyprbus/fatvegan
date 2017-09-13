@@ -65,7 +65,6 @@ class Navigation extends React.Component {
   }
 
   componentDidMount() { 
-    console.log("Navigation component did mount.")   
     this.setHours();
     this.setMenu();
     this.setOpenHours();

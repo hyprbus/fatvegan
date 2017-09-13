@@ -4,7 +4,7 @@
     "description": "Triple-fried, hand-cut Rosamunda potato chips with smoked tomato ketchup",
     "priceEuro": 6,
     "category_area": 5,
-    "category_glutenFree": "no",
+    "category_gluten": 1,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -13,7 +13,7 @@
     "description": "Corn nachos with black bean dip, habanero salsa and guacamole",
     "priceEuro": 7,
     "category_area": 3,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 1
   },
@@ -22,7 +22,7 @@
     "description": "Corn tortilla with black bean mash, white cabbage, avocado and habanero salsa",
     "priceEuro": 8,
     "category_area": 3,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 1
   },
@@ -31,7 +31,7 @@
     "description": "Deep-fried jalopenos filled with bean mash, salsa roja",
     "priceEuro": 6,
     "category_area": 3,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 0,
     "category_chiliStrength": 3
   },
@@ -40,7 +40,7 @@
     "description": "Our own Rosamunda potato chips, with a light cider vinegar and chive flavour, with one dip of your choice",
     "priceEuro": 5,
     "category_area": 5,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -49,7 +49,7 @@
     "description": "Roasted and salted smoked peanuts with a Cajun flavour",
     "priceEuro": 4,
     "category_area": 5,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -58,7 +58,7 @@
     "description": "Roman-style pizza Marinara: tomato and garlic",
     "priceEuro": 6,
     "category_area": 2,
-    "category_glutenFree": "no",
+    "category_gluten": 1,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -67,7 +67,7 @@
     "description": "Roman-style pizza with tomato sauce, fresh cherry tomatoes and fresh herbs",
     "priceEuro": 6,
     "category_area": 2,
-    "category_glutenFree": "no",
+    "category_gluten": 1,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -76,7 +76,7 @@
     "description": "Roman-style pizza with tomato sauce, grilled vegetables and black olive puree",
     "priceEuro": 7,
     "category_area": 2,
-    "category_glutenFree": "no",
+    "category_gluten": 1,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -85,7 +85,7 @@
     "description": "Marinated olives with lemon from Nyon and Cerignola",
     "priceEuro": 5,
     "category_area": 2,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 2,
     "category_chiliStrength": 0
   },
@@ -94,7 +94,7 @@
     "description": "Broccolini grilled on charcoal, with Maldon salt and a splash of peppery olive oil from Italy",
     "priceEuro": 6,
     "category_area": 2,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 2,
     "category_chiliStrength": 0
   },
@@ -103,7 +103,7 @@
     "description": "Our silky-smooth Lebanese hummus",
     "priceEuro": 4,
     "category_area": 4,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 2,
     "category_chiliStrength": 0
   },
@@ -112,7 +112,7 @@
     "description": "Crispy falafels with tomato salsa",
     "priceEuro": 7,
     "category_area": 4,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 1
   },
@@ -121,7 +121,7 @@
     "description": "Aubergine dip",
     "priceEuro": 4,
     "category_area": 4,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 2,
     "category_chiliStrength": 0
   },
@@ -130,7 +130,7 @@
     "description": "Chopped mint and parsely salad, with tomatoes and bulgur",
     "priceEuro": 5,
     "category_area": 4,
-    "category_glutenFree": "no",
+    "category_gluten": 1,
     "category_fodmap": 2,
     "category_chiliStrength": 0
   },
@@ -139,7 +139,7 @@
     "description": "Vine leaves stuffed with rice and herbs",
     "priceEuro": 5,
     "category_area": 4,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 2,
     "category_chiliStrength": 0
   },
@@ -148,7 +148,7 @@
     "description": "Butter beans in a spicy tomato sauce, flavoured with fresh dill",
     "priceEuro": 6,
     "category_area": 2,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -157,7 +157,7 @@
     "description": "Potato salad with marinated shallots, black olives, mustard vinaigrette, sprinkled with dry-roasted onions",
     "priceEuro": 7,
     "category_area": 1,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -166,16 +166,16 @@
     "description": "A collection of pintxos: pan-fried mushrooms with parsely and garlic, roasted and marinated red bell peppers, crushed white beans flavoured with lemon",
     "priceEuro": 8,
     "category_area": 2,
-    "category_glutenFree": "no",
+    "category_gluten": 1,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
   {
     "dish": "Garlic Baguette",
-    "description": "Warm and crispy french baguette filled with garlic and parsley pur�e",
+    "description": "Warm and crispy french baguette filled with garlic and parsley purée",
     "priceEuro": 7,
     "category_area": 1,
-    "category_glutenFree": "no",
+    "category_gluten": 1,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -184,7 +184,7 @@
     "description": "Chinese bao with pak choi, deep-fried tofu and plum sauce",
     "priceEuro": 7,
     "category_area": 0,
-    "category_glutenFree": "no",
+    "category_gluten": 1,
     "category_fodmap": 2,
     "category_chiliStrength": 0
   },
@@ -193,7 +193,7 @@
     "description": "Fermented cabbage with chili",
     "priceEuro": 5,
     "category_area": 0,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 2
   },
@@ -202,7 +202,7 @@
     "description": "Deep-fried, marinated tofu with satay sauce",
     "priceEuro": 7,
     "category_area": 0,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 1
   },
@@ -211,7 +211,7 @@
     "description": "A small bowl of rice, vegetables and deep-fried marinated tofu, with soy and chilli",
     "priceEuro": 9,
     "category_area": 0,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 2,
     "category_chiliStrength": 1
   },
@@ -220,7 +220,7 @@
     "description": "Chocolate brownie with caramel sauce and salty peanuts",
     "priceEuro": 7,
     "category_area": 6,
-    "category_glutenFree": "no",
+    "category_gluten": 1,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -229,7 +229,7 @@
     "description": "Coconut Ice Cream with caramel, chocolate and raspberry sauce",
     "priceEuro": 7,
     "category_area": 6,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -238,7 +238,7 @@
     "description": "Our collection of homemade candies",
     "priceEuro": 7,
     "category_area": 6,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -247,7 +247,7 @@
     "description": "Raspberry sorbet with shaved dark chocolate",
     "priceEuro": 7,
     "category_area": 6,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 2,
     "category_chiliStrength": 0
   },
@@ -256,7 +256,7 @@
     "description": "Coconut panna cotta with Mauritian vanilla and strawberry sauce",
     "priceEuro": 7,
     "category_area": 6,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 2,
     "category_chiliStrength": 0
   },
@@ -265,7 +265,7 @@
     "description": "Pear cooked with sugar, star anis and cinnamon, served with roasted hazelnuts, chocolate and caramel sauce",
     "priceEuro": 7,
     "category_area": 6,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 1,
     "category_chiliStrength": 0
   },
@@ -274,7 +274,7 @@
     "description": "Deep-fried bread filled with lentils",
     "priceEuro": 7,
     "category_area": 0,
-    "category_glutenFree": "no",
+    "category_gluten": 1,
     "category_fodmap": 1,
     "category_chiliStrength": 1
   },
@@ -283,7 +283,7 @@
     "description": "Fried crushed potatoes with coriander",
     "priceEuro": 6,
     "category_area": 0,
-    "category_glutenFree": "yes",
+    "category_gluten": 0,
     "category_fodmap": 0,
     "category_chiliStrength": 3
   }

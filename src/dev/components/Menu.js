@@ -1,10 +1,3 @@
-// Menu component structure:
-//  Menu
-//    Dish
-//      Name
-//      Description
-//      Category 1-N
-
 import React from "react"
 import Dish from "./Dish.js"
 
@@ -18,15 +11,14 @@ const Menu = (props) => {
         dish={d.dish}
         description={d.description}
         priceeuro={d.priceEuro}
-        glutenfree={d.category_glutenFree}
-        hotness={props.hotnessValues[parseInt(d.category_chiliStrength+1)]}
-        category={props.foodCategoryValues[parseInt(d.category_area+1)]}
-        fodmap={props.fodmapValues[parseInt(d.category_fodmap+1)]}
+        gluten={(d.category_gluten === 0) ? true : false}
+        hotness={props.hotnessValues[parseInt(d.category_chiliStrength +1 )]}
+        fodmap={props.fodmapValues[parseInt(d.category_fodmap +1 )]}
       />
     )
     // all filtering of the menu here
     if (
-      (props.glutenfreeonly === false || d.category_glutenFree === "yes") &&
+      ((props.glutenFilter === -1) || (parseInt(d.category_gluten) === props.glutenFilter)) &&
       ((props.hotnessFilter === -1) || (parseInt(d.category_chiliStrength) === props.hotnessFilter)) &&
       ((props.foodCategoryFilter === -1) || (parseInt(d.category_area) === props.foodCategoryFilter)) &&
       ((props.fodmapFilter === -1) || (parseInt(d.category_fodmap) === props.fodmapFilter))

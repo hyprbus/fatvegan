@@ -1,6 +1,5 @@
 import React from "react"
 import DropDown from "./DropDown.js"
-import FlipBox from "./FlipBox.js"
 
 class FilterMenu extends React.Component {
   constructor(props) {
@@ -27,12 +26,6 @@ class FilterMenu extends React.Component {
     // const hotnessValues = this.props.hotnessValues
     return (
       <form className="filterMenu">
-        <FlipBox 
-          id="glutenFreeOnly"
-          label="Gluten-free"
-          value={this.props.GlutenFreeOnly}
-          onValueSelect={this.handleFilterChange}
-        />
         <DropDown
           id="hotness"
           active={this.state.activeFilter}
@@ -60,6 +53,15 @@ class FilterMenu extends React.Component {
         onValueSelect={this.handleFilterChange}
         setToActive={this.changeActiveFilter}
       />
+      <DropDown
+      id="gluten"
+      active={this.state.activeFilter}
+      label=""
+      values={this.props.glutenValues}
+      selected={this.props.glutenFilter}
+      onValueSelect={this.handleFilterChange}
+      setToActive={this.changeActiveFilter}
+    />
       </form>
     )
   }
