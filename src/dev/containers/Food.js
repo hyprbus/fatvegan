@@ -2,7 +2,6 @@ import React from "react"
 import Menu from "../components/Menu.js"
 import FilterMenu from "../components/FilterMenu.js"
 import TextHeader from "../components/TextHeader.js"
-import setHTMLBackground from "../functions/setHTMLBackground.js"
 
 // note: not a real container, since it doesn't retrieve the menu (Navigation.js does it). Change?
 
@@ -16,7 +15,7 @@ class Food extends React.Component {
       foodCategory: -1,
       foodCategoryValues: ["(all categories)", "Asia", "Europe", "Mediterranean", "Mexico", "Middle East", "North America", "Dessert"],
       fodmap: -1,
-      fodmapValues: ["(all)", ":(", ":|", ":)"],
+      fodmapValues: ["(all)", "High", "Medium", "Low"],
       gluten: -1,
       glutenValues: ["(may contain gluten)", "Gluten-free"]
     }
@@ -31,13 +30,9 @@ class Food extends React.Component {
     })
   }
 
-  componentDidMount() { 
-    setHTMLBackground(0)
-  }
-
   render() {
     return (
-      <div className="sectionElement">
+      <div className="subPage">
         <TextHeader
           text="Food and Drinks"
         />

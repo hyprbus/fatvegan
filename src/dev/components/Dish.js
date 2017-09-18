@@ -1,18 +1,46 @@
 import React from "react"
-import Icon from "./Icon.js"
 
 const Dish = (props) => {
+  let iconGroup = []
+  if (props.gluten) {
+    iconGroup.push(
+      <IconImage 
+        key={"gluten0"} 
+        iconStyle="dishIconImage"
+        source="images/glutenfree-icon.svg" 
+      />)
+  }
+  if (props.hotness > 0) {
+    let i = 0;
+    for (i; i < props.hotness; i++) {
+      iconGroup.push(
+        <IconImage 
+          key={"hotness" + i} 
+          iconStyle="dishIconImage"
+          source={"images/chili-icon.svg"} 
+        />)
+    }
+  }
+
+  if (props.fodmap > 0) {
+    let i = 0;
+    for (i; i < props.fodmap; i++) {
+      iconGroup.push(
+        <IconImage 
+          key={"fodmap" + i} 
+          iconStyle="dishIconImage"
+          source={"images/fodmap-icon.svg"} 
+        />)
+    }
+  }
+
   return (
     <div className="dishStyle">
       <DishHeader dish={props.dish} priceeuro={props.priceeuro} />
       <DishDescription description={props.description} />
-      <div>Hotness: {props.hotness}</div>
-      <div>FODMAP: {props.fodmap}</div>
-      <Icon 
-        type="boolean" 
-        value={props.gluten} 
-        images={["images/glutenfree-icon.svg"]} 
-      />
+      <div>
+        {iconGroup}
+      </div>
     </div>
   )
 }
@@ -31,6 +59,15 @@ const DishHeader = (props) => {
 const DishDescription = (props) => {
   return (
     <div className="dishDescription">{props.description}</div>
+  )
+}
+
+const IconImage = (props) => {
+  return (
+    <img 
+      className={props.iconStyle}
+      src={props.source}
+    />
   )
 }
 
