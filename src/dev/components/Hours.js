@@ -3,15 +3,12 @@ import StaticText from './StaticText.js'
 import TextHeader from './TextHeader.js'
 import DailyHours from './DailyHours.js'
 import getWeekdayName from '../functions/getWeekdayName.js'
-import setHTMLBackground from "../functions/setHTMLBackground.js"
 
 class Hours extends React.Component {
   constructor(props) {
     super(props)
   }
-  componentDidMount() { 
-    setHTMLBackground(1)
-  }
+
   render() {
     const listItems = this.props.hours.map((d) =>
       <DailyHours
@@ -23,7 +20,7 @@ class Hours extends React.Component {
       />
     )
     return (
-      <div className="sectionElement">
+      <div className="subPage">
         <TextHeader text="Hours" />
         {listItems}
       </div>

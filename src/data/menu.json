@@ -168,7 +168,7 @@
     "category_area": 2,
     "category_gluten": 1,
     "category_fodmap": 1,
-    "category_chiliStrength": 0
+    "category_chiliStrength": 1
   },
   {
     "dish": "Garlic Baguette",
@@ -213,7 +213,7 @@
     "category_area": 0,
     "category_gluten": 0,
     "category_fodmap": 2,
-    "category_chiliStrength": 1
+    "category_chiliStrength": 2
   },
   {
     "dish": "Brownie",

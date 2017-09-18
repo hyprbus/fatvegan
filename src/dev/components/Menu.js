@@ -12,8 +12,8 @@ const Menu = (props) => {
         description={d.description}
         priceeuro={d.priceEuro}
         gluten={(d.category_gluten === 0) ? true : false}
-        hotness={props.hotnessValues[parseInt(d.category_chiliStrength +1 )]}
-        fodmap={props.fodmapValues[parseInt(d.category_fodmap +1 )]}
+        hotness={d.category_chiliStrength}
+        fodmap={d.category_fodmap}
       />
     )
     // all filtering of the menu here
@@ -47,7 +47,7 @@ const Menu = (props) => {
 
 const CategoryRow = (props) => {
   return (
-    <div className="categoryRow">{props.category}</div>
+    <div className="dishCategoryRow">{props.category}</div>
   )
 }
 

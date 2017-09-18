@@ -34,6 +34,11 @@ body {
   margin-top: 1%;
 }
 
+/* subpage within a higher order wrapping component */
+.subPage {
+  width: 100%;
+}
+
 /* paragraph styling */
 
 .textHeader {
@@ -62,7 +67,7 @@ body {
 /* for div elements with table cell behaviour */
 .tableLikeCell {
   display: inline-block;
-  width: 35%;
+  width: 40%;
 }
 
 /* links formatting */
@@ -106,6 +111,15 @@ a {
   /*  border: 2px solid white; */
 }
 
+/* for placing some menu items after the actual content */
+.afterContent {
+  order: 10;
+}
+
+/* hide some menu items when they are active */
+.hidden {
+  display: none;
+}
 
 /* selected react router navlink menu item */
 .menuActive {
@@ -147,12 +161,12 @@ a {
 
 /* for removing right margin on last item in a row */
 
-#lastItemOnRow {
+.lastItemOnRow {
   margin-right: 0;
 }
 
 
-/* Menu styling: menu, dish and dish elements */
+/* Food menu styling: menu, dish and dish elements */
 
 .menuStyle {
   font-family: $dishes-font, serif;
@@ -161,23 +175,23 @@ a {
 
 /* menu category row formatting, eg "Asia", "Desserts" */
 
-.categoryRow {
+.dishCategoryRow {
   color: $menu-category-color;
   background-color: $menu-category-bg-color;
   font-size: 1em;
+  text-transform: uppercase;
   font-weight: bold;
   padding: 0 2% 0 2%;
   margin: 1em 0 0 0;
 }
 
-.dishStyle {
-  background-color: $dish-bg-color;
-  padding: .75em 0 .25em 0;
-  border-bottom: 1px dotted black;
+.dishCategoryRow:first-child {
+  margin: 0 0 0 0;
 }
 
-.dishStyle:last-child {
-  border-bottom: 0;
+.dishStyle {
+  background-color: $dish-bg-color;
+  padding: .25em 2% .75em 2%;
 }
 
 ul.dishHeader {
@@ -213,9 +227,10 @@ span + span:before {
 }
 
 .dishDescription {
-  font-size: .9em;
+  font-size: 1em;
 }
 
-.dishIcons {
-  width: 10%;
+.dishIconImage {
+  height: $dish-icon-height;
+  margin: 0 1% 0 0;
 }

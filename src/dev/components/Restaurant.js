@@ -1,15 +1,12 @@
 import React from 'react'
 import TextHeader from './TextHeader.js'
 import StaticText from './StaticText.js'
-import setHTMLBackground from "../functions/setHTMLBackground.js"
 
 class Restaurant extends React.Component {
     constructor(props) {
         super(props)
       }
-    componentDidMount() { 
-        setHTMLBackground(0)
-    }
+
     render() {
         const content = 
         `We serve the tastiest, most satisfying vegan you'll find anywhere.
@@ -29,7 +26,7 @@ class Restaurant extends React.Component {
         See you soon! 
         `
         return (
-            <div className="sectionElement">
+            <div className="subPage">
                 <TextHeader text="About the Restaurant" />
                 <StaticText text={content} />
             </div>
