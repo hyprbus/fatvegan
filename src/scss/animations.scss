@@ -1,0 +1,35 @@
+@import "./_variables.scss";
+
+.swipe-enter {
+/*  transform: translateX($slide-distance); */
+  height: 0;
+  margin-top: 1%;
+  padding: 0;
+  border: 0;
+}
+
+.swipe-enter-active {
+  animation-name: swipeEnterActiveAnimation;
+  animation-duration: 1s;
+}
+
+.swipe-exit {
+/*  transform: translateX($slide-distance); */
+  margin-top: 0;
+}
+
+.swipe-exit-active {
+  animation-name: swipeExitActiveAnimation;
+  animation-duration: 0.5s;
+}
+
+@keyframes swipeExitActiveAnimation {
+  0% {transform: translateX(0px)}
+  100% {transform: translateX($slide-distance)}
+}
+
+@keyframes swipeEnterActiveAnimation {
+  0% { transform: translateX($slide-distance)}
+  50% { transform: translateX($slide-distance)}
+  100% { transform: translateX(0px)}
+}

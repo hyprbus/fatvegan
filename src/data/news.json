@@ -1,0 +1,17 @@
+[
+  {
+      "news": "We're closed on Friday 6.10.",
+      "validFrom": "2017.9.17",
+      "validUntil": "2017.10.6" 
+  },
+  {
+    "news": "We're open on Halloween 22.10!",
+    "validFrom": "2017.9.18",
+    "validUntil": "2017.10.22" 
+  },
+  {
+    "news": "We're closed during midsummer 23-25.6.",
+    "validFrom": "2017.6.20",
+    "validUntil": "2017.6.25" 
+  }
+]

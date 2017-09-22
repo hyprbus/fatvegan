@@ -5,6 +5,7 @@ import {
   NavLink,
   Switch
 } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Home from '../components/Home.js';
 import Hours from '../components/Hours.js';
 import Food from './Food.js';
@@ -25,6 +26,7 @@ import wrapSitePage from './wrapSitePage.js'
 const basePath = '/fatvegan/src'
 const hours = basePath + '/data/hours.json'
 const menu = basePath + '/data/menu.json'
+const news = basePath + '/data/news.json'
 const hiddenClassName = "hidden"
 const today = new Date()
 
@@ -42,9 +44,11 @@ class Navigation extends React.Component {
       hours: [],
       menu: [],
       today: null,
+      todayDate: today,
       openToday: "",
       // some hard-coding to make some menu items appear after the page content
-      menuClassNames: ["menu", "menu", "menu", "menu lastItemOnRow", "menu afterContent", "menu afterContent"]
+      menuClassNames: ["menu", "menu", "menu", "menu lastItemOnRow", "menu afterContent", "menu afterContent lastItemOnRow"],
+      news: []
     }
     this.setMenuVisibility = this.setMenuVisibility.bind(this)
   }
@@ -92,9 +96,16 @@ class Navigation extends React.Component {
      })
   }
 
+  getNews(newsFile) {
+    readFile(newsFile, (n) => {
+      this.setState({news: n})
+    })
+  }
+
   componentDidMount() { 
     this.setHours();
     this.setMenu();
+    this.getNews(news)
     this.setOpenHours();
     this.setMenuVisibility([true, true, true, true, true, true])
   }
@@ -111,12 +122,23 @@ class Navigation extends React.Component {
           <NavLink to="/hours" className={this.state.menuClassNames[3]} activeClassName="menuActive">Hours</NavLink>
           <NavLink to="/restaurant" className={this.state.menuClassNames[4]} activeClassName="menuActive">About</NavLink>
           <NavLink to="/diet" className={this.state.menuClassNames[5]} activeClassName="menuActive">Special Diet?</NavLink>
-          <Switch>
+          <Route render={({ history: { location } }) => (
+            <TransitionGroup className="fullWidth" >
+              <CSSTransition
+                location={location}
+                key={location.key}
+                classNames="swipe"
+                timeout={{ enter: 1000, exit: 500 }}
+              >
+          <Switch location={this.props.location}>
             <Route exact path="/" render={() => <WrappedHome 
               displayMenu={this.setMenuVisibility} 
               visibilityArray={[true, true, true, true, true, true]}
               background={1}
-              opentoday={this.state.openToday} /> } />
+              opentoday={this.state.openToday}
+              news={this.state.news}
+              todayDate={this.state.todayDate}
+            /> } />
             <Route 
               path="/book" 
               render={() => <WrappedBook 
@@ -136,7 +158,7 @@ class Navigation extends React.Component {
               render={() => <WrappedHours 
                 displayMenu={this.setMenuVisibility} 
                 visibilityArray={[true, true, true, true, false, false]}
-                background={1}
+                background={0}
                 hours={this.state.hours} 
                 today={this.state.today} 
                 /> } 
@@ -153,7 +175,10 @@ class Navigation extends React.Component {
             /> } />
             <Route component={UrlNotFound} />
           </Switch>
-        </div>
+          </CSSTransition>
+        </TransitionGroup>
+      )}/>
+      </div>
       </BrowserRouter>
     )
   }

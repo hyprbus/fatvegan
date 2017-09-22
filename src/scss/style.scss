@@ -26,6 +26,10 @@ body {
   min-height: 100%;
 }
 
+.fullWidth {
+  width: 100%
+}
+
 /* general class for sections of text in the app */
 .sectionElement {
   display: flex;
@@ -34,8 +38,17 @@ body {
   margin-top: 1%;
 }
 
+/* flex container wrapping subpages (Home, About, Hours etc) for handling animation vertical alignment */
+.pageWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-top: 1%;
+}
+
 /* subpage within a higher order wrapping component */
 .subPage {
+  flex-basis: 100%;
   width: 100%;
 }
 
@@ -47,7 +60,6 @@ body {
   font-weight: bold;
   color: $text-header-color;
   background-color: $text-header-bg-color;
-  /* margin: .5em 0 0 0; */
   padding: 0 2% 0 2%;
   width: 96%;
 }
@@ -67,7 +79,7 @@ body {
 /* for div elements with table cell behaviour */
 .tableLikeCell {
   display: inline-block;
-  width: 40%;
+  width: 35%;
 }
 
 /* links formatting */
