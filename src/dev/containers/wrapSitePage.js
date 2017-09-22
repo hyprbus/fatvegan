@@ -20,7 +20,7 @@ export default function wrapSitePage(WrappedComponent) {
 
     render() {
       return ( 
-        <div className="sectionElement">
+        <div className="pageWrapper">
           <WrappedComponent {...this.props} />
         </div>
       )

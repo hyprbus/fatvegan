@@ -5,7 +5,8 @@ import StaticText from './StaticText.js'
 class Diet extends React.Component {
     constructor(props) {
         super(props)
-      }
+    }
+    
     render() {
         const content = 
         `Can't eat gluten? Sensitive stomach? Nut allergy? Don't worry, we've got your back (or should we say tummy).
