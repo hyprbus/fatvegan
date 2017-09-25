@@ -1,26 +1,24 @@
 @import "./_variables.scss";
 
 .swipe-enter {
-/*  transform: translateX($slide-distance); */
-  height: 0;
-  margin-top: 1%;
-  padding: 0;
-  border: 0;
+  /* transform: translateX($slide-distance); */
+  order: 10;
 }
 
 .swipe-enter-active {
+  transition-timing-function: ease-in-out;
   animation-name: swipeEnterActiveAnimation;
   animation-duration: 1s;
 }
 
 .swipe-exit {
 /*  transform: translateX($slide-distance); */
-  margin-top: 0;
 }
 
 .swipe-exit-active {
+  transition-timing-function: ease-in-out;
   animation-name: swipeExitActiveAnimation;
-  animation-duration: 0.5s;
+  animation-duration: .5s;
 }
 
 @keyframes swipeExitActiveAnimation {
