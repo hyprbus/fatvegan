@@ -128,7 +128,7 @@ class Navigation extends React.Component {
                 location={location}
                 key={location.key}
                 classNames="swipe"
-                timeout={{ enter: 1000, exit: 500 }}
+                timeout={{ enter: 980, exit: 480 }}
               >
           <Switch location={this.props.location}>
             <Route exact path="/" render={() => <WrappedHome 
