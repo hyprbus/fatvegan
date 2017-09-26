@@ -16,6 +16,7 @@ import UrlNotFound from '../components/UrlNotFound.js'; // note: not working wit
 import readFile from '../functions/readFile.js';
 import openToday from '../functions/openToday.js';
 import wrapSitePage from './wrapSitePage.js'
+import MenuBar from '../components/MenuBar.js'
 
 // note difference between dev and deployment paths (put into webpack!)
 // dev path:
@@ -37,7 +38,17 @@ const WrappedHome = wrapSitePage(Home)
 const WrappedRestaurant = wrapSitePage(Restaurant)
 const WrappedDiet = wrapSitePage(Diet)
 
-class Navigation extends React.Component {
+// build navlinks: class, activeclass, exact (true/false), to, label
+const menuComponents = [
+  {exactlink: true, to: "/", label: "Home", class: "menu", activeclass: "menuActive"},
+  {exactlink: false, to: "/book", label: "Book", class: "menu", activeclass: "menuActive"},
+  {exactlink: false, to: "/food", label: "Food", class: "menu", activeclass: "menuActive"},
+  {exactlink: false, to: "/hours", label: "Hours", class: "menu lastItemOnRow", activeclass: "menuActive"},
+  {exactlink: false, to: "/restaurant", label: "About", class: "menu afterContent", activeclass: "menuActive"},
+  {exactlink: false, to: "/diet", label: "Special Diet?", class: "menu afterContent lastItemOnRow", activeclass: "menuActive"}
+]
+
+export default class Navigation extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -46,32 +57,16 @@ class Navigation extends React.Component {
       today: null,
       todayDate: today,
       openToday: "",
-      // some hard-coding to make some menu items appear after the page content
-      menuClassNames: ["menu", "menu", "menu", "menu lastItemOnRow", "menu afterContent", "menu afterContent lastItemOnRow"],
+      menuButtons: menuComponents,
+      menuVisibility: [true, true, true, true, true, true],
       news: []
     }
     this.setMenuVisibility = this.setMenuVisibility.bind(this)
   }
 
   setMenuVisibility (visibilityArray) {
-    let newClassNames = this.state.menuClassNames.slice()
-    visibilityArray.forEach((element, i) => {
-      // if visibility true, remove hiddenClassName from className if it exists there
-      if (element) {
-        newClassNames[i] = 
-          newClassNames[i].endsWith(hiddenClassName) ? 
-          newClassNames[i].slice(0, newClassNames[i].length - hiddenClassName.length) : 
-          newClassNames[i] 
-      } else {
-      // if visibility is false, add hiddenClassName to className if it's not there
-        newClassNames[i] = 
-          newClassNames[i].endsWith(hiddenClassName) ? 
-          newClassNames[i] :
-          newClassNames[i] + " " + hiddenClassName
-      }
-    })
     this.setState(prevState => ({
-      menuClassNames: newClassNames
+      menuVisibility: visibilityArray
     }))
   }
 
@@ -116,14 +111,12 @@ class Navigation extends React.Component {
         <div className={"flexContainer background" + this.state.backgroundImage}>
           <div className="logo heading">Fat Vegan</div>
           <div className="slogan">100% vegan<br></br>100% pleasure</div>
-          <NavLink exact to="/" className={this.state.menuClassNames[0]} activeClassName="menuActive">Home</NavLink>
-          <NavLink to="/book" className={this.state.menuClassNames[1]} activeClassName="menuActive">Book</NavLink>
-          <NavLink to="/food" className={this.state.menuClassNames[2]} activeClassName="menuActive">Food</NavLink>
-          <NavLink to="/hours" className={this.state.menuClassNames[3]} activeClassName="menuActive">Hours</NavLink>
-          <NavLink to="/restaurant" className={this.state.menuClassNames[4]} activeClassName="menuActive">About</NavLink>
-          <NavLink to="/diet" className={this.state.menuClassNames[5]} activeClassName="menuActive">Special Diet?</NavLink>
+          <MenuBar
+            menuVisibility={this.state.menuVisibility}
+            menuItems={this.state.menuButtons}
+          />
           <Route render={({ history: { location } }) => (
-            <TransitionGroup className="fullWidth" >
+            <TransitionGroup className="pageContainer" >
               <CSSTransition
                 location={location}
                 key={location.key}
@@ -184,4 +177,3 @@ class Navigation extends React.Component {
   }
 }
 
-export default Navigation;

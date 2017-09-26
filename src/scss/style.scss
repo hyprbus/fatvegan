@@ -14,12 +14,19 @@ body {
   flex-wrap: wrap;
 }
 
-.fullWidth {
+.pageContainer {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   width: 100%;
   margin-top: 1%;
+}
+
+.menuButtonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
 }
 
 /* flex container wrapping subpages (Home, About, Hours etc) for handling animation vertical alignment */
@@ -44,6 +51,13 @@ body {
   padding: 1% solid white;
   height: 100%;
   background-repeat: no-repeat;
+  background-position: 0 0;
+  animation: animatedBackground .5s ease-in-out;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 1000px; }
+	to { background-position: 0 0; }
 }
 
 /* paragraph styling */
@@ -117,14 +131,10 @@ a {
   /*  border: 2px solid white; */
 }
 
+/* delete? */
 /* for placing some menu items after the actual content */
 .afterContent {
   order: 10;
-}
-
-/* hide some menu items when they are active */
-.hidden {
-  display: none;
 }
 
 /* selected react router navlink menu item */

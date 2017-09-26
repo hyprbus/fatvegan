@@ -8,7 +8,9 @@
 .swipe-enter-active {
   transition-timing-function: ease-in-out;
   animation-name: swipeEnterActiveAnimation;
+  -webkit-animation-name: swipeEnterActiveAnimation;
   animation-duration: 1s;
+  -webkit-animation-duration: 1s;
 }
 
 .swipe-exit {
@@ -18,10 +20,17 @@
 .swipe-exit-active {
   transition-timing-function: ease-in-out;
   animation-name: swipeExitActiveAnimation;
+  -webkit-animation-name: swipeExitActiveAnimation;
   animation-duration: .5s;
+  -webkit-animation-duration: .5s;
 }
 
 @keyframes swipeExitActiveAnimation {
+  0% {transform: translateX(0px)}
+  100% {transform: translateX($slide-distance)}
+}
+
+@-webkit-keyframes swipeExitActiveAnimation {
   0% {transform: translateX(0px)}
   100% {transform: translateX($slide-distance)}
 }
@@ -30,4 +39,29 @@
   0% { transform: translateX($slide-distance)}
   50% { transform: translateX($slide-distance)}
   100% { transform: translateX(0px)}
+}
+
+@-webkit-keyframes swipeEnterActiveAnimation {
+  0% { transform: translateX($slide-distance)}
+  100% { transform: translateX(0px)}
+}
+
+/* menu button animations */
+
+.menuButton-enter {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.menuButton-exit {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.menuButton-enter-active {
+  opacity: 1;
+}
+
+.menuButton-exit-active {
+  opacity: 0;
 }
