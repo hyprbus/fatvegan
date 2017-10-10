@@ -52,7 +52,7 @@ body {
   height: 100%;
   background-repeat: no-repeat;
   background-position: 0 0;
-  animation: animatedBackground .5s ease-in-out;
+  animation: animatedBackground .3s ease-in-out;
 }
 
 @keyframes animatedBackground {
@@ -70,6 +70,17 @@ body {
   background-color: $text-header-bg-color;
   padding: 0 2% 0 2%;
   width: 96%;
+}
+
+.smallHeader {
+  font-family: $heading-font, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: $text-header-color;
+  background-color: $text-header-bg-color;
+  padding: 0 2% 0 2%;
+  width: 96%;
+  margin: 1% 0 0 0;
 }
 
 .statictext {
@@ -249,4 +260,61 @@ span + span:before {
 .dishIconImage {
   height: $dish-icon-height;
   margin: 0 1% 0 0;
+}
+
+/* modal dialogs */
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  padding-top: 100px; /* Location of the box */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: $static-text-bg-color;
+  padding: 10px;
+  margin: auto;
+}
+
+.modalHeader {
+  font-family: $heading-font, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: $text-header-color;
+  background-color: $text-header-bg-color;
+  padding: 0 2% 0 2%;
+  width: 96%;
+}
+.modalButton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px;
+  margin: 10px 10px 0px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  width: 100px;
+}
+
+/* to disabledControl */
+
+/* custom buttons */
+
+.myButton {
+  flex-basis: 25%;
+  flex-grow: 1;
+  color: $clickable-color;
+  background-color: $clickable-bg-color;
+  text-align: center;
+  cursor: pointer;
+}
+
+.controlDisabled {
+  font-style: italic;
+  color: $disabled-color;
+  background-color: $disabled-bg-color;
 }

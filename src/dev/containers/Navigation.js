@@ -9,7 +9,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Home from '../components/Home.js';
 import Hours from '../components/Hours.js';
 import Food from './Food.js';
-import Book from '../components/Book.js';
+import Book from '../book/Book.js';
 import Diet from '../components/Diet.js';
 import Restaurant from '../components/Restaurant.js';
 import UrlNotFound from '../components/UrlNotFound.js'; // note: not working without server-side configs
