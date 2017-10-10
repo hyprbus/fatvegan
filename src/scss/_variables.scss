@@ -1,14 +1,15 @@
 $body-margin: 1%;
-
+$bg-color: white; /* generic bg-color */
 $clickable-color: #000;
 $clickable-bg-color: rgb(246, 169, 131);
 $clickable-weight: normal;
 
-$selected-color: white;
+$selected-color: $bg-color;
 $selected-bg-color: #F52204;
 
 $static-text-color: #444;
 $static-text-bg-color: #fff;
+$static-text-bg-color-accent: #ddd;
 
 $text-header-color: #fff;
 $text-header-bg-color: #444;
@@ -38,7 +39,16 @@ $menu-category-color: $text-header-color;
 $menu-category-bg-color: $text-header-bg-color;
 $dish-icon-height: 5vh;
 
+/* selector button */
+$selector-color: $static-text-color;
+$selector-bg-color: $clickable-bg-color;
+$selector-selected-bg-color: lightgreen;
+
 /* animations */
 
 /* iPhone SE screen size = 640! */
 $slide-distance: -650px;
+
+/* disabled control style */
+$disabled-color: #444;
+$disabled-bg-color: #eee;

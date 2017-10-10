@@ -1,0 +1,43 @@
+@import "./_variables.scss";
+
+.selectorGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  line-height: 3em;
+  margin: 1% 0 0 0;
+  width: 100%;
+  align-items: center;
+  font-family: $text-font, sans-serif;
+}
+
+.selector {
+  flex-basis: 15%;
+  flex-grow: 1;
+  text-align: center;
+  color: $selector-color;
+  background-color: $selector-bg-color;
+  border-width: 0 1% 0 0;
+  border-style: solid;
+  border-color: $bg-color;
+  margin: 1% 0 0 0;
+  cursor: pointer;
+}
+
+.selectorGroup .selector:last-child {
+  /* border-width: 0; */
+}
+
+.selectorActive {
+  background-color: $selector-selected-bg-color;
+}
+
+.selectorText {
+  flex-basis: 30%;
+  flex-grow: 3;
+  font-family: $text-font, sans-serif;
+  color: $static-text-color;
+  background-color: $static-text-bg-color-accent;
+  text-align: center;
+  margin: 0 1% 0 0;
+}
