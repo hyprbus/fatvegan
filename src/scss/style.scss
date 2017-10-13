@@ -269,13 +269,12 @@ span + span:before {
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  padding-top: 100px; /* Location of the box */
-  width: 100%; /* Full width */
+  // note: width hard-coded from 100 - 2*$body-margin
+  width: 98%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: $static-text-bg-color;
-  padding: 10px;
-  margin: auto;
+  margin: $body-margin;
 }
 
 .modalHeader {

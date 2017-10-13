@@ -11,6 +11,9 @@ const dateToString = (d, format, separator) => {
   let minutes = (m < 10 ? "0" : "") + m
   let dateString = "dateToString: format not defined"
   switch (format) {
+    case "day":
+      dateString = day
+      break
     case "short":
       dateString = day + separator + month
       break
