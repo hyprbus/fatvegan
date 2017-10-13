@@ -1,9 +1,10 @@
 import React from "react"
 import TextHeader from "../components/TextHeader.js"
+import SmallHeader from "../components/TextHeader.js"
 import StaticText from "../components/StaticText.js"
 import Selector from "./Selector.js"
 import { SelectorGroup } from "./SelectorGroup.js"
-import DatePicker from "./DatePicker.js"
+import { DatePicker } from "./DatePicker.js"
 import ConfirmBooking from "./ConfirmBooking.js"
 import MyButton from "./MyButton.js"
 import { setCookie, getCookie } from "../functions/cookies.js"
@@ -12,6 +13,8 @@ import dateToString from "../functions/dateToString.js"
 // set quick booking days to next day at 18:00 and 19:00, skip sundays
 let day = new Date()
 day.setHours(0, 0, 0, 0)
+// store today's date to supply to DatePicker component
+let today = new Date(day)
 let nextDay = (day.getDay() === 6) ? 2 : 1
 day.setDate(day.getDate() + nextDay)
 let quickBook1 = new Date(day)
@@ -145,7 +148,7 @@ export default class Book extends React.Component {
     return (
       <div className="subPage">
         <StaticText text="Alone? Just pop in, we'll seat you." />
-        <div className="smallHeader">Quick Book</div>
+        <SmallHeader text="Quick Book" />
           <div className="selectorGroup">
             <div className="selectorText"> 
               {dateToString(this.state.bookings[0].date, "long", ".") + ", " + this.state.bookings[0].guests + " persons"}
@@ -167,22 +170,32 @@ export default class Book extends React.Component {
           />
         </div>
         <StaticText text="Book Another Time:" />
-        <div className="smallHeader">Guests</div>
+        <SmallHeader text="Guests" />
         <SelectorGroup
-          values={["2", "3", "4", "5", "6"]}
-          selector="guests"
+          values={[
+            {value: 2, format: "text", selectable: true}, 
+            {value: 3, format: "text", selectable: true}, 
+            {value: 4, format: "text", selectable: true }, 
+            {value: 5, format: "text", selectable: true}, 
+            {value: 6, format: "text", selectable: true}]}
           selected={this.state.guests}
-          onSelect={this.setSelectedValue}
+          onSelect={this.setSelectedValue.bind(this, "guests")}
+          perRow={5}
         />
-        <div className="smallHeader">Time</div>
+        <SmallHeader text="Time" />
         <SelectorGroup
-          values={[18, 19, 20, 21, 22]}
-          formatting="time"
-          selector="reservationTime"
+          values={[
+              {value: 18, format: "time", selectable: true}, 
+              {value: 19, format: "time", selectable: true}, 
+              {value: 20, format: "time", selectable: true}, 
+              {value: 21, format: "time", selectable: true},
+              {value: 22, format: "time", selectable: true}
+            ]}
           selected={this.state.reservationTime}
-          onSelect={this.setSelectedValue}
+          onSelect={this.setSelectedValue.bind(this, "reservationTime")}
+          perRow={5}
         />
-        <div className="smallHeader">Date</div>
+        <SmallHeader text="Date" />
         <div className="selectorGroup">
           <div className="selectorText">
             {dateToString(this.state.reservationDate, "medium", ".")}
@@ -211,13 +224,15 @@ export default class Book extends React.Component {
           approve={this.approveBooking}
         />
         <DatePicker
+          beginDate={today}
+          noOfDays={21}
           header="Pick a date"
           confirmationText="OK"
           modalID="selectDateModal"
           visible={this.state.activeModal === "selectDateModal" ? true : false}
           cancelModal={this.cancelDatePicker.bind(this, this.state.reservationDate)}
           approveButtonDisabled={this.state.tempDate === null ? true : false}
-          selectDate={this.setSelectedValue}
+          selectDate={this.selectDate}
           selectedDate={this.state.tempDate}
           approve={this.approveDate}
         />

@@ -5,27 +5,24 @@
   flex-direction: row;
   flex-wrap: wrap;
   line-height: 3em;
-  margin: 1% 0 0 0;
+  margin: 0;
   width: 100%;
   align-items: center;
   font-family: $text-font, sans-serif;
+  justify-content: space-between;
 }
 
 .selector {
-  flex-basis: 15%;
+  flex-basis: 10%;
   flex-grow: 1;
   text-align: center;
   color: $selector-color;
   background-color: $selector-bg-color;
-  border-width: 0 1% 0 0;
+  border-width: 0 0 0 0;
   border-style: solid;
   border-color: $bg-color;
-  margin: 1% 0 0 0;
+  margin: 0 0 $selector-spacing 0;
   cursor: pointer;
-}
-
-.selectorGroup .selector:last-child {
-  /* border-width: 0; */
 }
 
 .selectorActive {
@@ -41,3 +38,14 @@
   text-align: center;
   margin: 0 1% 0 0;
 }
+
+.selectorPassive {
+  background-color: $static-text-bg-color-accent;
+  cursor: default;
+}
+  
+.selectorEmpty {
+  background-color: $bg-color;
+  cursor: default;
+}
+  
