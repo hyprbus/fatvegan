@@ -17,17 +17,20 @@ import readFile from '../functions/readFile.js';
 import openToday from '../functions/openToday.js';
 import wrapSitePage from './wrapSitePage.js'
 import MenuBar from '../components/MenuBar.js'
+import AppHeader from '../components/AppHeader.js'
 
 // note difference between dev and deployment paths (put into webpack!)
 // dev path:
 // const basePath = '/fatvegan/src';
 // prod path:
 // const basePath = '/work/fatvegan';
+// with Node&Express, no different paths needed!
+// basePath = '' - for Node as server
 
-const basePath = '/fatvegan/src'
-const hours = basePath + '/data/hours.json'
-const menu = basePath + '/data/menu.json'
-const news = basePath + '/data/news.json'
+const basePath = '/work/fatvegan'
+const hours = 'data/hours.json'
+const menu = 'data/menu.json'
+const news = 'data/news.json'
 const hiddenClassName = "hidden"
 const today = new Date()
 
@@ -59,9 +62,25 @@ export default class Navigation extends React.Component {
       openToday: "",
       menuButtons: menuComponents,
       menuVisibility: [true, true, true, true, true, true],
-      news: []
+      news: [],
+      smallLogo: false,
+      headerAnimation: null
     }
     this.setMenuVisibility = this.setMenuVisibility.bind(this)
+    this.setLogoSize = this.setLogoSize.bind(this)
+  }
+
+  setLogoSize(logoToSmall) {
+    let headerAnimation = null
+    if (this.state.smallLogo && !logoToSmall) {
+      headerAnimation = "grow"
+    } else if (!this.state.smallLogo && logoToSmall) {
+      headerAnimation = "shrink"
+    }
+    this.setState(prevState => ({
+      smallLogo: logoToSmall,
+      headerAnimation: headerAnimation
+    }))
   }
 
   setMenuVisibility (visibilityArray) {
@@ -108,9 +127,8 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <BrowserRouter basename={basePath}>
-        <div className={"flexContainer background" + this.state.backgroundImage}>
-          <div className="logo heading">Fat Vegan</div>
-          <div className="slogan">100% vegan<br></br>100% pleasure</div>
+        <div className="flexContainer">
+          <AppHeader animate={this.state.headerAnimation} />
           <MenuBar
             menuVisibility={this.state.menuVisibility}
             menuItems={this.state.menuButtons}
@@ -125,6 +143,8 @@ export default class Navigation extends React.Component {
               >
           <Switch location={this.props.location}>
             <Route exact path="/" render={() => <WrappedHome 
+              setLogoSize={this.setLogoSize}
+              smallLogo={false}
               displayMenu={this.setMenuVisibility} 
               visibilityArray={[true, true, true, true, true, true]}
               background={1}
@@ -135,12 +155,16 @@ export default class Navigation extends React.Component {
             <Route 
               path="/book" 
               render={() => <WrappedBook 
+                setLogoSize={this.setLogoSize}
+                smallLogo={true}
                 displayMenu={this.setMenuVisibility} 
                 background={0}
                 visibilityArray={[true, true, true, true, false, false]}
                  />} 
             />
             <Route path="/food" render={() => <WrappedFood
+               setLogoSize={this.setLogoSize}
+               smallLogo={true}
                displayMenu={this.setMenuVisibility} 
                visibilityArray={[true, true, true, true, false, false]}
                background={0}
@@ -149,6 +173,8 @@ export default class Navigation extends React.Component {
             <Route 
               path="/hours" 
               render={() => <WrappedHours 
+                setLogoSize={this.setLogoSize}
+                smallLogo={false}
                 displayMenu={this.setMenuVisibility} 
                 visibilityArray={[true, true, true, true, false, false]}
                 background={0}
@@ -156,12 +182,16 @@ export default class Navigation extends React.Component {
                 today={this.state.today} 
                 /> } 
               />
-            <Route path="/restaurant" render={() => <WrappedRestaurant 
+            <Route path="/restaurant" render={() => <WrappedRestaurant
+              setLogoSize={this.setLogoSize} 
+              smallLogo={true}
               displayMenu={this.setMenuVisibility} 
               visibilityArray={[true, true, true, true, false, false]}
               background={0}
                /> } />
             <Route path="/diet" render={() => <WrappedDiet 
+              setLogoSize={this.setLogoSize}
+              smallLogo={true}
               displayMenu={this.setMenuVisibility} 
               visibilityArray={[true, true, true, true, false, false]}
               background={0}

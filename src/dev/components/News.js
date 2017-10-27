@@ -11,14 +11,22 @@ const News = (props) => {
   let today = new Date(props.todayDate)
   // reset the hours of of today's date
   today.setHours(0,0,0,0);
-  props.news.forEach(function(newsItem, index) {
-    let validFrom = new Date(newsItem.validFrom)
-    let validUntil = new Date(newsItem.validUntil)
-    // only add news if todayDate between validFrom and validUntil
+  let length = props.news.length
+  for (let i = 0; i < length; i++) {
+    let validFrom = new Date(props.news[i].validFrom)
+    let validUntil = new Date(props.news[i].validUntil)
     if (today >= validFrom  && today <= validUntil) {
-      newsItems.push(<StaticText key={"news-" + index} text={newsItem.news} />)
+      newsItems.push(<StaticText key={"news-" + i} text={props.news[i].news} />)
     }
-  })
+  }
+  // props.news.forEach(function(newsItem, index) {
+  //   let validFrom = new Date(newsItem.validFrom)
+  //   let validUntil = new Date(newsItem.validUntil)
+  //   // only add news if todayDate between validFrom and validUntil
+  //   if (today >= validFrom  && today <= validUntil) {
+  //     newsItems.push(<StaticText key={"news-" + index} text={newsItem.news} />)
+  //   }
+  // })
   if (newsItems.length === 0) 
     { 
       return(null) 

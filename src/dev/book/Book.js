@@ -1,7 +1,7 @@
 import React from "react"
 import TextHeader from "../components/TextHeader.js"
-import SmallHeader from "../components/TextHeader.js"
-import StaticText from "../components/StaticText.js"
+import SmallHeader from "../components/SmallHeader.js"
+import TightText from "../components/TightText.js"
 import Selector from "./Selector.js"
 import { SelectorGroup } from "./SelectorGroup.js"
 import { DatePicker } from "./DatePicker.js"
@@ -147,8 +147,7 @@ export default class Book extends React.Component {
   render() {
     return (
       <div className="subPage">
-        <StaticText text="Alone? Just pop in, we'll seat you." />
-        <SmallHeader text="Quick Book" />
+        <TightText text="Alone? Just pop in, we'll seat you." />
           <div className="selectorGroup">
             <div className="selectorText"> 
               {dateToString(this.state.bookings[0].date, "long", ".") + ", " + this.state.bookings[0].guests + " persons"}
@@ -169,7 +168,7 @@ export default class Book extends React.Component {
             action={this.openBookingModal.bind(this, "confirmBookingModal", this.state.bookings[1])} 
           />
         </div>
-        <StaticText text="Book Another Time:" />
+        <TightText text="Book Another Time:" />
         <SmallHeader text="Guests" />
         <SelectorGroup
           values={[
@@ -244,7 +243,7 @@ export default class Book extends React.Component {
 const toMilliseconds = (x) => x*60*60*1000
 
 const getContact = () => {
-  let contact = {name: "", email: "", contact}
+  let contact = {name: "", email: "", phone: ""}
   contact.name = getCookie("name")
   contact.email = getCookie("email")
   contact.phone = getCookie("phone")

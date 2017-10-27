@@ -30,11 +30,11 @@ export default class Modal extends React.Component {
     const buttonClass = this.props.approveButtonDisabled ? "modalButton controlDisabled" : "modalButton"
     return (
         <div className="modal" id={this.props.modalId} >
-          <div className="modalHeader">
-            {this.props.header}
-          </div>
+          <div className="modalContent">
+            <div className="modalHeader">
+              {this.props.header}
+            </div>
             {this.props.children}
-          <div>
             <button 
               disabled={this.props.approveButtonDisabled} 
               className={buttonClass} 

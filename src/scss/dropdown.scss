@@ -13,7 +13,7 @@
 
 /* DropDown container component, now just debug info */
 .dropDown {
-  font-size: .8em;
+  font-size: $dropdown-font-size;
   flex-basis: $filter-width;
   flex-grow: 1;
   max-width: $max-filter-width;
@@ -22,6 +22,7 @@
 /* clickable filters / dropdown selectors looks */
 .filterSelector {
   cursor: pointer;
+  line-height: $filter-height;
   color: $filter-color;
   background-color: $filter-bg-color;
   line-height: $filter-height;

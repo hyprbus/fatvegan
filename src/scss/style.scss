@@ -1,9 +1,5 @@
 @import "./_variables.scss";
 
-
-/* debug border */
-/* * { border: 1px solid red; } */
-
 body {
   margin: $body-margin;
 }
@@ -20,6 +16,16 @@ body {
   flex-direction: row;
   width: 100%;
   margin-top: 1%;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 10vh;
+  background-color: black;
 }
 
 .menuButtonsContainer {
@@ -80,7 +86,7 @@ body {
   background-color: $text-header-bg-color;
   padding: 0 2% 0 2%;
   width: 96%;
-  margin: 1% 0 0 0;
+  margin: 0 0 0 0;
 }
 
 .statictext {
@@ -89,6 +95,18 @@ body {
   color: $static-text-color;
   background-color: $static-text-bg-color;
   padding: 1% 2% 1% 2%;
+  margin-bottom: 1%;
+  width: 96%;
+  /* inserts line break for multiline react text components */
+  white-space: pre-line;
+}
+
+.tightText {
+  font-family: $text-font, sans-serif;
+  line-height: 1em;
+  color: $static-text-color;
+  background-color: $static-text-bg-color;
+  padding: 1% 2% 0 2%;
   margin-bottom: 1%;
   width: 96%;
   /* inserts line break for multiline react text components */
@@ -161,29 +179,23 @@ a {
 .logo {
   display: flex;
   flex-basis: 65%;
-  font-family: $logo-font, serif;
-  font-size: 2.2em;
-  text-align: center;
-  color: white;
-  background-color: black;
-  align-items: center;
-  justify-content: center;
+}
+
+.logoImage {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .slogan {
   display: flex;
   flex-basis: 33%;
   font-family: $slogan-font, serif;
-  font-size: .8em;
+  font-size: $slogan-font-size;
   text-align: left;
   padding: 0 0 0 2%;
   background-color: white;
   color: black;
-  align-items: center;
-}
-
-.heading {
-  height: 10vh;
+ align-items: center;
 }
 
 /* for removing right margin on last item in a row */
@@ -219,6 +231,7 @@ a {
 .dishStyle {
   background-color: $dish-bg-color;
   padding: .25em 2% .75em 2%;
+  border-top: 1px dotted $static-text-color;
 }
 
 ul.dishHeader {
@@ -269,11 +282,16 @@ span + span:before {
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  // note: width hard-coded from 100 - 2*$body-margin
-  width: 98%; /* Full width */
+  width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: $static-text-bg-color;
+  margin: 0;
+  padding: 0;
+}
+
+/* anything inside the modal */
+.modalContent {
   margin: $body-margin;
 }
 
@@ -283,23 +301,24 @@ span + span:before {
   font-weight: bold;
   color: $text-header-color;
   background-color: $text-header-bg-color;
-  padding: 0 2% 0 2%;
-  width: 96%;
+  padding: 0 $body-margin 0 $body-margin;
+  width: 98%;
 }
 .modalButton {
-  background-color: #4CAF50;
+  background-color: $clickable-bg-color;
   border: none;
-  color: white;
-  padding: 20px;
+  color: $clickable-color;
+  line-height: 3em;
+  /* padding: 20px; */
   margin: 10px 10px 0px 0px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
+  font-family: $button-font, sans-serif;
+  font-size: 1em;
+  font-weight: $clickable-weight;
   width: 100px;
 }
-
-/* to disabledControl */
 
 /* custom buttons */
 
