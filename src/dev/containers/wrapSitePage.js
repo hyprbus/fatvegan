@@ -13,7 +13,8 @@ export default function wrapSitePage(WrappedComponent) {
     this.props.displayMenu(visibilityArray)
   }
 
-  componentDidMount() { 
+  componentDidMount() {
+    this.props.setLogoSize(this.props.smallLogo)
     this.handleMenuVisibility(this.props.visibilityArray)
     setHTMLBackground(this.props.background)
   }

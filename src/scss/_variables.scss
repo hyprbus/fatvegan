@@ -3,7 +3,7 @@ $bg-color: white; /* generic bg-color */
 $clickable-color: #000;
 $clickable-bg-color: rgb(246, 169, 131);
 $clickable-weight: normal;
-
+$clickable-height: 3em;
 $selected-color: $bg-color;
 $selected-bg-color: #F52204;
 
@@ -19,9 +19,10 @@ $highlight-bg-color: rgb(237, 246, 174);
 
 $filter-color: $clickable-color;
 $filter-bg-color: $clickable-bg-color;
-$filter-height: 2em;
+$filter-height: $clickable-height;
 $filter-width: 35%;
 $max-filter-width: 48%;
+$dropdown-font-size: .9em;
 
 $dish-bg-color: #fff;
 
@@ -30,16 +31,19 @@ $dropdown-list-width: 39.2%;
 
 $logo-font: "Alfa Slab One";
 $slogan-font: "Alfa Slab One";
+$slogan-font-size: .8em;
 $menu-font: "Vollkorn";
 $heading-font: "Vollkorn";
 $text-font: "Vollkorn";
+$button-font: "Vollkorn";
 $filter-font: "Vollkorn";
 $dishes-font: "Vollkorn";
+
 $menu-category-color: $text-header-color;
 $menu-category-bg-color: $text-header-bg-color;
 $dish-icon-height: 5vh;
-
 /* selector button */
+$button-height: $clickable-height;
 $selector-color: $static-text-color;
 $selector-bg-color: $clickable-bg-color;
 $selector-selected-bg-color: lightgreen;

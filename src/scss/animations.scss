@@ -1,28 +1,20 @@
 @import "./_variables.scss";
 
 .swipe-enter {
-  /* transform: translateX($slide-distance); */
   order: 10;
 }
 
 .swipe-enter-active {
-  transition-timing-function: ease-in-out;
-  animation-name: swipeEnterActiveAnimation;
-  -webkit-animation-name: swipeEnterActiveAnimation;
-  animation-duration: 1s;
-  -webkit-animation-duration: 1s;
+  animation: swipeEnterActiveAnimation 1s ease-in-out;
+  -webkit-animation: swipeEnterActiveAnimation 1s ease-in-out;
 }
 
 .swipe-exit {
-/*  transform: translateX($slide-distance); */
 }
 
 .swipe-exit-active {
-  transition-timing-function: ease-in-out;
-  animation-name: swipeExitActiveAnimation;
-  -webkit-animation-name: swipeExitActiveAnimation;
-  animation-duration: .5s;
-  -webkit-animation-duration: .5s;
+  animation: .5s swipeExitActiveAnimation ease-in-out;
+  -webkit-animation: .5s swipeExitActiveAnimation ease-in-out
 }
 
 @keyframes swipeExitActiveAnimation {
@@ -31,19 +23,20 @@
 }
 
 @-webkit-keyframes swipeExitActiveAnimation {
-  0% {transform: translateX(0px)}
-  100% {transform: translateX($slide-distance)}
+  0% {-webkit-transform: translateX(0px)}
+  100% {-webkit-transform: translateX($slide-distance)}
 }
 
 @keyframes swipeEnterActiveAnimation {
-  0% { transform: translateX($slide-distance)}
-  50% { transform: translateX($slide-distance)}
+  0% { transform: translateX(-1300px)}
+  50%  { -webkit-transform: translateX($slide-distance)}
   100% { transform: translateX(0px)}
 }
 
 @-webkit-keyframes swipeEnterActiveAnimation {
-  0% { transform: translateX($slide-distance)}
-  100% { transform: translateX(0px)}
+  0%   { -webkit-transform: translateX($slide-distance)}
+  50%  { -webkit-transform: translateX($slide-distance)}
+  100% { -webkit-transform: translateX(0px)}
 }
 
 /* menu button animations */
@@ -64,4 +57,104 @@
 
 .menuButton-exit-active {
   opacity: 0;
+}
+
+/* logo and slogan animation */
+
+.logo-shrink {
+  animation-fill-mode: forwards;
+  transition-timing-function: ease-in-out;
+  animation-name: logoShrink;
+  -webkit-animation-name: logoShrink;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+  transform-origin: top left;
+}
+
+.logo-grow {
+  animation-fill-mode: forwards;
+  transition-timing-function: ease-in-out;
+  animation-name: logoGrow;
+  -webkit-animation-name: logoGrow;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+  transform-origin: top left;
+}
+
+@keyframes logoShrink {
+  0% {flex-basis: 65%;}
+  100% {flex-basis: 100%;}
+}
+
+@keyframes logoGrow {
+  0% {flex-basis: 100%;}
+  100% {flex-basis: 65%;}
+}
+
+.heading-shrink {
+  animation-fill-mode: forwards;
+  transition-timing-function: ease-in-out;
+  animation-name: headingShrink;
+  -webkit-animation-name: headingShrink;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+}
+
+.heading-grow {
+  animation-fill-mode: forwards;
+  transition-timing-function: ease-in-out;
+  animation-name: headingGrow;
+  -webkit-animation-name: headingGrow;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+}
+
+@keyframes headingShrink {
+  0% {height: 10vh}
+  100% {height: 5vh}
+}
+
+@keyframes headingGrow {
+  0% {height: 5vh}
+  100% {height: 10vh}
+}
+
+.slogan-shrink {
+  animation-fill-mode: forwards;
+  transition-timing-function: ease-in-out;
+  animation-name: sloganShrink;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+  transform-origin: top right;
+  -webkit-transform-origin: top right;
+}
+
+.slogan-grow {
+  animation-fill-mode: forwards;
+  transition-timing-function: ease-in-out;
+  animation-name: sloganGrow;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+  transform-origin: top right;
+  -webkit-transform-origin: top right;
+}
+
+@keyframes sloganShrink {
+  0% {transform: scaleX(1); font-size: $slogan-font-size;}
+  100% {transform: scaleX(0); font-size: 0;}
+}
+
+@-webkit-keyframes sloganShrink {
+  0% {-webkit-transform: scaleX(1); font-size: $slogan-font-size;}
+  100% {-webkit-transform: scaleX(0); font-size: 0;}
+}
+
+@keyframes sloganGrow {
+  0% {transform: scaleX(0); font-size: 0;}
+  100% {transform: scaleX(1); font-size: $slogan-font-size;}
+}
+
+@-webkit-keyframes sloganGrow {
+  0% {-webkit-transform: scaleX(0); font-size: 0;}
+  100% {-webkit-transform: scaleX(1); font-size: $slogan-font-size;}
 }
