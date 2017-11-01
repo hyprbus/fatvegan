@@ -1,7 +1,12 @@
 @import "./_variables.scss";
 
 body {
-  margin: $body-margin;
+  width: 98%;
+  margin: auto;
+}
+
+#fatvegan {
+
 }
 
 .flexContainer {
@@ -25,7 +30,7 @@ body {
   justify-content: space-between;
   width: 100%;
   height: 10vh;
-  background-color: black;
+  background-color: #cf3401;
 }
 
 .menuButtonsContainer {
@@ -70,8 +75,9 @@ body {
 
 .textHeader {
   font-family: $heading-font, sans-serif;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: bold;
+  text-transform: uppercase;
   color: $text-header-color;
   background-color: $text-header-bg-color;
   padding: 0 2% 0 2%;
@@ -80,17 +86,18 @@ body {
 
 .smallHeader {
   font-family: $heading-font, sans-serif;
-  font-size: 1em;
+  font-size: .8em;
   font-weight: bold;
-  color: $text-header-color;
-  background-color: $text-header-bg-color;
+  text-transform: uppercase;
+  color: $text-smallheader-color;
+  background-color: $text-smallheader-bg-color;
   padding: 0 2% 0 2%;
   width: 96%;
-  margin: 0 0 0 0;
+  margin: 1% 0 0 0;
 }
 
 .statictext {
-  font-family: $text-font, sans-serif;
+  font-family: $text-font, serif;
   line-height: 1.5em;
   color: $static-text-color;
   background-color: $static-text-bg-color;
@@ -102,7 +109,7 @@ body {
 }
 
 .tightText {
-  font-family: $text-font, sans-serif;
+  font-family: $text-font, serif;
   line-height: 1em;
   color: $static-text-color;
   background-color: $static-text-bg-color;
@@ -111,6 +118,32 @@ body {
   width: 96%;
   /* inserts line break for multiline react text components */
   white-space: pre-line;
+}
+
+.bookingText {
+  font-family: $text-font, serif;
+  line-height: 1em;
+  color: $static-text-color;
+  background-color: $static-text-bg-color;
+  margin: 4% 0 0 0;
+}
+
+.inputField {
+  font-family: $text-font, serif;
+  color: $static-text-color;
+  background-color: $static-text-bg-color;
+  margin-bottom: 1%;
+  width: 96%;
+}
+
+.inputBox {
+  font-size: 1em;
+  font-family: $text-font, serif;
+}
+
+.inputLabel {
+  font-weight: bold;
+  margin: 3% 0 0 0;
 }
 
 /* for div elements with table cell behaviour */
@@ -146,6 +179,8 @@ a {
 .menu {
   font-family: $menu-font, sans-serif;
   font-weight: $clickable-weight;
+  text-transform: uppercase;
+  font-size: .8em;
   color: $clickable-color;
   background-color: $clickable-bg-color;
   flex-basis: 22%;
@@ -182,6 +217,7 @@ a {
 }
 
 .logoImage {
+  fill: green;
   max-height: 100%;
   max-width: 100%;
 }
@@ -191,6 +227,7 @@ a {
   flex-basis: 33%;
   font-family: $slogan-font, serif;
   font-size: $slogan-font-size;
+  font-weight: bold;
   text-align: left;
   padding: 0 0 0 2%;
   background-color: white;
@@ -217,7 +254,7 @@ a {
 .dishCategoryRow {
   color: $menu-category-color;
   background-color: $menu-category-bg-color;
-  font-size: 1em;
+  font-size: .9em;
   text-transform: uppercase;
   font-weight: bold;
   padding: 0 2% 0 2%;
@@ -267,6 +304,7 @@ span + span:before {
 }
 
 .dishDescription {
+  line-height: 125%;
   font-size: 1em;
 }
 
@@ -303,21 +341,23 @@ span + span:before {
   background-color: $text-header-bg-color;
   padding: 0 $body-margin 0 $body-margin;
   width: 98%;
+  margin: 0 0 1% 0;
 }
 .modalButton {
   background-color: $clickable-bg-color;
   border: none;
   color: $clickable-color;
-  line-height: 3em;
+  line-height: $button-height;
   /* padding: 20px; */
   margin: 10px 10px 0px 0px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-family: $button-font, sans-serif;
+  font-family: $button-font, serif;
   font-size: 1em;
   font-weight: $clickable-weight;
   width: 100px;
+  border-radius: $clickable-border-radius;
 }
 
 /* custom buttons */
@@ -329,10 +369,41 @@ span + span:before {
   background-color: $clickable-bg-color;
   text-align: center;
   cursor: pointer;
+  border-radius: $clickable-border-radius;
+}
+
+.rightMargin {
+  margin-right: $selector-spacing;
 }
 
 .controlDisabled {
   font-style: italic;
   color: $disabled-color;
   background-color: $disabled-bg-color;
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    width: 98%;
+    margin: $body-margin auto $body-margin auto;
+  }
+  .modal {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    width: 768px;
+    margin: $body-margin auto $body-margin auto;
+  }
+  .modal {
+    max-width: 768px;
+    left: 50%;
+    margin-left: -384px;
+  }
+  .dropDownList {
+    max-width: 300px;
+  }
 }

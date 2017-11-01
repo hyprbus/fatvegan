@@ -1,6 +1,5 @@
 import React from 'react'
 import StaticText from './StaticText.js'
-import TextHeader from './TextHeader.js'
 import DailyHours from './DailyHours.js'
 import getWeekdayName from '../functions/getWeekdayName.js'
 
@@ -21,7 +20,6 @@ class Hours extends React.Component {
     )
     return (
       <div className="subPage">
-        <TextHeader text="Hours" />
         {listItems}
       </div>
     )

@@ -13,7 +13,7 @@ class Food extends React.Component {
       hotness: -1,
       hotnessValues: ["(all strengths)", "No Chili", "Slightly Hot", "Hot", "Very Hot"],
       foodCategory: -1,
-      foodCategoryValues: ["(all categories)", "Asia", "Europe", "Mediterranean", "Mexico", "Middle East", "North America", "Dessert"],
+      foodCategoryValues: ["(all categories)", "Asia", "Europe", "Mediterranean", "Mexico", "Middle East", "North America", "Dessert", "Drinks"],
       fodmap: -1,
       fodmapValues: ["(all)", "High", "Medium", "Low"],
       gluten: -1,

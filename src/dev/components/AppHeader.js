@@ -33,7 +33,7 @@ export default class AppHeader extends React.Component {
           <img className="logoImage" src="images/fat-vegan-logo.svg" />
         </div>
         <div className={"slogan" + sloganStyle} >
-          100% vegan<br></br>100% pleasure
+          100% Vegan,<br></br>100% Pleasure
         </div>
       </div> 
   )}

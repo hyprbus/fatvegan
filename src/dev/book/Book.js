@@ -147,28 +147,22 @@ export default class Book extends React.Component {
   render() {
     return (
       <div className="subPage">
-        <TightText text="Alone? Just pop in, we'll seat you." />
+        <TightText text="Alone? Just pop in and we'll seat you." />
           <div className="selectorGroup">
-            <div className="selectorText"> 
-              {dateToString(this.state.bookings[0].date, "long", ".") + ", " + this.state.bookings[0].guests + " persons"}
-            </div>
             <MyButton 
               enabled={true} 
-              label="Book" 
+              label={"Quick book: " + dateToString(this.state.bookings[0].date, "long", ".") + ", " + this.state.bookings[1].guests + " persons"} 
               action={this.openBookingModal.bind(this, "confirmBookingModal", this.state.bookings[0])} 
             />
         </div>
         <div className="selectorGroup">
-          <div className="selectorText">
-            {dateToString(this.state.bookings[1].date, "long", ".") + ", " + this.state.bookings[1].guests + " persons"}
-          </div>
           <MyButton 
             enabled={true} 
-            label="Book" 
+            label={"Quick book: " + dateToString(this.state.bookings[1].date, "long", ".") + ", " + this.state.bookings[1].guests + " persons"} 
             action={this.openBookingModal.bind(this, "confirmBookingModal", this.state.bookings[1])} 
           />
         </div>
-        <TightText text="Book Another Time:" />
+        <TightText text="Book another time:" />
         <SmallHeader text="Guests" />
         <SelectorGroup
           values={[
@@ -200,6 +194,7 @@ export default class Book extends React.Component {
             {dateToString(this.state.reservationDate, "medium", ".")}
           </div>
           <MyButton 
+            rightMargin={true}
             enabled={true} 
             label="Select Date" 
             action={this.showModal.bind(this, "selectDateModal")} 

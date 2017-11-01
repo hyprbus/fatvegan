@@ -18,7 +18,7 @@ export const DatePicker = (props) => {
     days.map((item, index) => {
       dates.push({
         value: item, 
-        format: "text", 
+        format: "header", 
         selectable: false
       })
     })

@@ -5,7 +5,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   line-height: 3em;
-  margin: 0;
+  margin: 0 0 1% 0;
   width: 100%;
   align-items: center;
   font-family: $text-font, sans-serif;
@@ -23,9 +23,11 @@
   border-color: $bg-color;
   margin: 0 0 $selector-spacing 0;
   cursor: pointer;
+  border-radius: $clickable-border-radius;
 }
 
 .selectorActive {
+  color: $selector-selected-color;
   background-color: $selector-selected-bg-color;
 }
 
@@ -42,6 +44,11 @@
 .selectorPassive {
   background-color: $static-text-bg-color-accent;
   cursor: default;
+  border-radius: 0;
+}
+
+.selectorHeader {
+  line-height: 1.5em;
 }
   
 .selectorEmpty {

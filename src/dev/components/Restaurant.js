@@ -9,18 +9,17 @@ class Restaurant extends React.Component {
 
     render() {
         const content = 
-        `We serve the tastiest, most satisfying vegan you'll find anywhere.
-        These are dishes and snacks that were vegan from the start:
-        Tacos, guacamole, French fries, potato chips, hummus, falafel, Marinara pizza...
+        `We serve the tastiest, most satisfying vegan food you'll find anywhere.
+        These are the dishes and snacks that were vegan from the start:
+        Tacos, guacamole, French fries, Indian daal, potato chips, hummus, falafel, Marinara pizza...
         Are you drooling yet?
 
-        We take pride in making our dishes authentic and using the best ingredients and spices.
-        We bake our own sourdough bread, which you also can buy with. Be warned though, it's addictive.
-        Our charcoal grill puts that extra flavour on our grilled and marinated vegetables. 
+        We take pride in making our dishes as authentic as possible, and our charcoal grill puts that extra flavour on our grilled and marinated vegetables. 
+        We bake our own sourdough bread, which you also can buy to take home with you. Be warned though... it's addictive.
         
-        Even the most fanatical meat eater will return to us.
+        Even the most fanatical meat eaters return to us.
         
-        We're also an excellent place for getting a couple of beers, a glass of wine or a drink or two.
+        We're also an excellent place for just having a couple of beers, a glass of wine or a drink or two.
         And if you get hungry while you're having a local craft beer, order something at the bar.
         
         See you soon! 

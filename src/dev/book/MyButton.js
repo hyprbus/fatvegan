@@ -13,7 +13,7 @@ export default class MyButton extends React.Component {
   }
 
   render() {
-    const buttonStyle = "myButton"
+    const buttonStyle = this.props.rightMargin ? "myButton rightMargin" : "myButton "
     const disabled = "controlDisabled"
     if (this.props.enabled) {
       return (

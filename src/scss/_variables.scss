@@ -1,25 +1,40 @@
+/* color scheme:
+
+dark red: #cf3401
+orange: #ff880c
+middle orange: #ffbb40
+light yellow: #fef190
+dark green: #526f12
+
+*/
+
 $body-margin: 1%;
 $bg-color: white; /* generic bg-color */
 $clickable-color: #000;
-$clickable-bg-color: rgb(246, 169, 131);
-$clickable-weight: normal;
+$clickable-bg-color: #fef190;
+$clickable-weight: bold;
 $clickable-height: 3em;
-$selected-color: $bg-color;
-$selected-bg-color: #F52204;
+$selected-color: black;
+$selected-bg-color: #ffbb40;
 
-$static-text-color: #444;
+$static-text-color: #000;
 $static-text-bg-color: #fff;
 $static-text-bg-color-accent: #ddd;
 
 $text-header-color: #fff;
-$text-header-bg-color: #444;
+$text-header-bg-color: #526f12;
+
+$text-smallheader-color: black;
+$text-smallheader-bg-color: #f0ba00;
 
 $highlight-color: #000;
-$highlight-bg-color: rgb(237, 246, 174);
+$highlight-bg-color: $selected-bg-color;
 
 $filter-color: $clickable-color;
 $filter-bg-color: $clickable-bg-color;
 $filter-height: $clickable-height;
+$dropdown-item-bg-color: $clickable-bg-color;
+$dropdown-item-selected-bg-color: $highlight-bg-color;
 $filter-width: 35%;
 $max-filter-width: 48%;
 $dropdown-font-size: .9em;
@@ -29,31 +44,37 @@ $dish-bg-color: #fff;
 /* this is (100% - 2*the body margin) * $max-filter-width, to fix dropdown list = dropdown label width */
 $dropdown-list-width: 39.2%;
 
-$logo-font: "Alfa Slab One";
-$slogan-font: "Alfa Slab One";
-$slogan-font-size: .8em;
-$menu-font: "Vollkorn";
-$heading-font: "Vollkorn";
-$text-font: "Vollkorn";
-$button-font: "Vollkorn";
-$filter-font: "Vollkorn";
-$dishes-font: "Vollkorn";
+$head-font: "Open Sans";
+$base-font: "Eczar";
 
-$menu-category-color: $text-header-color;
-$menu-category-bg-color: $text-header-bg-color;
+$slogan-font: $base-font;
+$slogan-font-size: .9em;
+$menu-font: $head-font;
+$heading-font: $base-font;
+$text-font: $base-font;
+$button-font: $base-font;
+$filter-font: $base-font;
+$dishes-font: $base-font;
+
+$menu-category-color: $text-smallheader-color;
+$menu-category-bg-color: $text-smallheader-bg-color;
 $dish-icon-height: 5vh;
 /* selector button */
 $button-height: $clickable-height;
 $selector-color: $static-text-color;
 $selector-bg-color: $clickable-bg-color;
-$selector-selected-bg-color: lightgreen;
+$selector-selected-color: white;
+$selector-selected-bg-color: #526f12;
 $selector-spacing: 1%;
 
 /* animations */
 
 /* iPhone SE screen size = 640! */
-$slide-distance: -650px;
+$slide-distance: -3000px;
 
 /* disabled control style */
 $disabled-color: #444;
-$disabled-bg-color: #eee;
+$disabled-bg-color: #d4dfa4;
+
+/* rounded corners for buttons etc */
+$clickable-border-radius: 5px;

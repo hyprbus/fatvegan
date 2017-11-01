@@ -286,5 +286,50 @@
     "category_gluten": 0,
     "category_fodmap": 0,
     "category_chiliStrength": 3
+  },
+  {
+    "dish": "Kukko IPA",
+    "description": "Finnish pale ale with a bitter finish, 4.7%",
+    "priceEuro": 6,
+    "category_area": 7,
+    "category_gluten": 0,
+    "category_fodmap": 2,
+    "category_chiliStrength": 0
+  },
+  {
+    "dish": "Pilsner Urquell",
+    "description": "The classic Czech pils, 5.0%",
+    "priceEuro": 7,
+    "category_area": 7,
+    "category_gluten": 1,
+    "category_fodmap": 1,
+    "category_chiliStrength": 0
+  },
+  {
+    "dish": "Chiswick Bitter",
+    "description": "A classic English bitter, 3.5%",
+    "priceEuro": 6,
+    "category_area": 7,
+    "category_gluten": 1,
+    "category_fodmap": 1,
+    "category_chiliStrength": 0
+  },
+  {
+    "dish": "The Monthly Red",
+    "description": "Our monthly red wine, with flavour following the seasons",
+    "priceEuro": 7,
+    "category_area": 7,
+    "category_gluten": 0,
+    "category_fodmap": 1,
+    "category_chiliStrength": 0
+  },
+  {
+    "dish": "Kung Fu Riesling",
+    "description": "An award-winning Riesling from USA, 13.5%",
+    "priceEuro": 7,
+    "category_area": 7,
+    "category_gluten": 0,
+    "category_fodmap": 1,
+    "category_chiliStrength": 0
   }
  ]

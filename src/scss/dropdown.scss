@@ -30,6 +30,7 @@
   text-align: center;
   position: relative;
   margin: 1% 0 1% 0;
+  border-radius: $clickable-border-radius;
 }
 
 /* DropDown list */
@@ -44,12 +45,13 @@
 .dropDownItem {
   font-weight: normal;
   color: black;
-  background-color: lightsalmon;
+  background-color: $dropdown-item-bg-color;
   padding: 0 0 0 5%;
+  border-bottom: 1px solid white;
 }
 
 .dropDownItemSelected {
-  background-color: orange;
+  background-color: $dropdown-item-selected-bg-color;
   color: white;
   font-weight: bold;
 }

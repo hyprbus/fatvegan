@@ -27,7 +27,7 @@ import AppHeader from '../components/AppHeader.js'
 // with Node&Express, no different paths needed!
 // basePath = '' - for Node as server
 
-const basePath = '/work/fatvegan'
+const basePath = '/fatvegan/src'
 const hours = 'data/hours.json'
 const menu = 'data/menu.json'
 const news = 'data/news.json'
@@ -47,7 +47,7 @@ const menuComponents = [
   {exactlink: false, to: "/book", label: "Book", class: "menu", activeclass: "menuActive"},
   {exactlink: false, to: "/food", label: "Food", class: "menu", activeclass: "menuActive"},
   {exactlink: false, to: "/hours", label: "Hours", class: "menu lastItemOnRow", activeclass: "menuActive"},
-  {exactlink: false, to: "/restaurant", label: "About", class: "menu afterContent", activeclass: "menuActive"},
+  {exactlink: false, to: "/restaurant", label: "About Us", class: "menu afterContent", activeclass: "menuActive"},
   {exactlink: false, to: "/diet", label: "Special Diet?", class: "menu afterContent lastItemOnRow", activeclass: "menuActive"}
 ]
 

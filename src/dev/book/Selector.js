@@ -22,9 +22,10 @@ export default class Selector extends React.Component {
       selector: "selector",
       selected: "selectorActive",
       blank: "selectorEmpty",
-      passive: "selectorPassive"
+      passive: "selectorPassive",
+      header: "selectorPassive selectorHeader"
     }
-    style = styles.selector + " " + (this.props.selected ? styles.selected : "") + " " + (!this.props.selectable ? styles.passive : "") + " " + (this.props.format === "blank" ? styles[this.props.format] : "")
+    style = styles.selector + " " + (this.props.selected ? styles.selected : "") + " " + (!this.props.selectable ? styles.passive : "") + " " + ((this.props.format === "blank") || (this.props.format === "header") ? styles[this.props.format] : "")
     const selectorProps = {
       className: style,
       style: typeof this.props.perRow === "number" ? exactWidth : {}

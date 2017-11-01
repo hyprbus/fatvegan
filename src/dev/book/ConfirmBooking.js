@@ -3,6 +3,7 @@
 import React from "react"
 import Modal from "./Modal.js"
 import dateToString from "../functions/dateToString.js"
+import StaticText from "../components/StaticText.js"
 
 // 
 
@@ -26,20 +27,20 @@ export default class ConfirmBooking extends React.Component {
         approveModal={this.props.approve.bind(this, this.props.contact, this.props.booking)}
         {...this.props} 
       >
+        <div className="bookingText">{"Your booking: " + bookingString}</div>
         <div>
-          {bookingString}
-        </div>
-        <div>
-          <div>Name</div>
-          <input name="name" value={this.props.contact.name} onChange={this.handleChange} />
-        </div>
-        <div>
-          <div>Phone</div>
-          <input name="phone" value={this.props.contact.phone} onChange={this.handleChange} />
-        </div>
-        <div>
-          <div>Email</div>
-          <input name="email" value={this.props.contact.email} onChange={this.handleChange} />
+          <div className="inputField">
+            <div className="inputLabel">Name</div>
+            <input className="inputBox" name="name" value={this.props.contact.name} onChange={this.handleChange} />
+          </div>
+          <div className="inputField">
+            <div className="inputLabel">Phone</div>
+            <input className="inputBox" name="phone" value={this.props.contact.phone} onChange={this.handleChange} />
+          </div>
+          <div className="inputField">
+            <div className="inputLabel">Email</div>
+            <input className="inputBox" name="email" value={this.props.contact.email} onChange={this.handleChange} />
+          </div>
         </div>
       </Modal>
     )}
