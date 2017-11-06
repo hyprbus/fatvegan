@@ -21,7 +21,7 @@ var config = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader', 
-                    use: ['css-loader?url=false', 'sass-loader']
+                    use: ['css-loader?url=false&sourceMap', 'sass-loader?sourceMap']
                 })
             }
         ]
@@ -33,7 +33,8 @@ var config = {
         new ExtractTextPlugin('../css/style.css', {
             allChunks: true
         })
-    ]
+    ],
+    devtool: 'source-map'
 }
 
 module.exports = config
